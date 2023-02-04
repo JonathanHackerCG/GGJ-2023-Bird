@@ -34,10 +34,10 @@
   },
   "tileAnimationFrames": [],
   "tileAnimationSpeed": 15.0,
-  "tileHeight": 32,
+  "tileHeight": 40,
   "tilehsep": 0,
   "tilevsep": 0,
-  "tileWidth": 32,
+  "tileWidth": 40,
   "tilexoff": 0,
   "tileyoff": 0,
 }
