@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "CCJ-2023-YYP",
-    "path": "CCJ-2023-YYP.yyp",
+    "name": "_Assets",
+    "path": "folders/Tilesets/_Assets.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

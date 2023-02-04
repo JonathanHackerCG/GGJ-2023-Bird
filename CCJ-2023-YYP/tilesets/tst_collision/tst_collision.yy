@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "CCJ-2023-YYP",
-    "path": "CCJ-2023-YYP.yyp",
+    "name": "Tilesets",
+    "path": "folders/Tilesets.yy",
   },
   "spriteId": {
     "name": "spr_collision",

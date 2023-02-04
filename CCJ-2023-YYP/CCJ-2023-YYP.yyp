@@ -59,6 +59,9 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Floor 1","folderPath":"folders/Rooms/Floor 1.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Design","folderPath":"folders/Level Design.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"_Assets","folderPath":"folders/Level Design/_Assets.yy","order":0,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Tilesets.yy","order":0,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"_Assets","folderPath":"folders/Tilesets/_Assets.yy","order":0,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Combat","folderPath":"folders/Combat.yy","order":0,},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"controllerblacklist.csv","CopyToMask":-1,"filePath":"datafiles",},
