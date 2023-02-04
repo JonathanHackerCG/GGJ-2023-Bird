@@ -12,13 +12,13 @@ zoom_options = [1];
 zoom_index = 0; //Default zoom value (index).
 
 //Pre-scaling options. Recommendation: DO NOT MODIFY.
-prescale_options = [1, 2, 4];		//Prescale options. Whole numbers only.
-prescale_index = 1;							//Default prescale value (index).
+prescale_options = [1];		//Prescale options. Whole numbers only.
+prescale_index = 0;							//Default prescale value (index).
 
 //Post-scaling options.
 //prescale_index is chosen automatically.
 postscale_options = [1, 2, 3, 4];						//Final canvas scaling to fit the screen.
-array_push(postscale_options, 1.5);					//Works if prescale_options includes 2.
+//array_push(postscale_options, 1.5);					//Works if prescale_options includes 2.
 //array_push(postscale_options, 1.25, 1.75);	//Works if prescale_options includes 4.
 #endregion
 #region Single-time initialization.
@@ -33,8 +33,8 @@ scale_override = 0;
 
 shake = 0;
 
-target_zoom = 2;
-max_zoom = 4;
+target_zoom = 1;
+max_zoom = 1;
 min_zoom = 1;
 zoom = 1;
 
@@ -307,7 +307,7 @@ function init_screen_default()
 {
 	var _s_base = prescale_options[prescale_index];
 	CAMERA.scale_override = 0;
-	CAMERA.init_screen(640, 640, 360, 360, 2, fullscreen);
+	CAMERA.init_screen(1920, 1920, 1080, 1080, _s_base, fullscreen);
 }
 #endregion
 #region toggle_fullscreen();
