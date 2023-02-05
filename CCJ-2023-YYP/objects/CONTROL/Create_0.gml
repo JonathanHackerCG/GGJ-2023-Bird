@@ -43,6 +43,7 @@ function start_combat()
 /// @func player_phase_start()
 function player_phase_start()
 {
+	AUDIO.play("snd_pass_turn_enemy");
 	PLAYER.sap = STARTING_SAP_AMOUNT;
 	player_deck.draw(STARTING_DRAW_AMOUNT);
 	with (par_enemy) { choose_attack(); }
@@ -69,6 +70,7 @@ function player_phase_input()
 /// @func player_phase_end();
 function player_phase_end()
 {
+	AUDIO.play("snd_pass_turn");
 	player_deck.discard_hand();
 	return true;
 }

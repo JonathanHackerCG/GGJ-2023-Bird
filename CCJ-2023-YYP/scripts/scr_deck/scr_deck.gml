@@ -36,6 +36,7 @@ function Deck() constructor
 	{
 		if (array_length(_cards_discard) == 0) { exit; }
 		
+		AUDIO.play("snd_shuffle");
 		_cards_discard = array_shuffle(_cards_discard);
 		_cards_library = array_concat(_cards_discard, _cards_library);
 		_cards_discard = [];
@@ -67,6 +68,7 @@ function Deck() constructor
 	/// @arg	number
 	static draw = function(_number)
 	{
+		AUDIO.play("snd_card_draw");
 		var _hand_size = array_length(_cards_hand);
 		repeat(min(_number, MAX_HAND_SIZE - _hand_size))
 		{

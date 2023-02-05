@@ -212,6 +212,7 @@ function effect_draw_range(_minimum, _maximum)
 /// @arg	amount
 function attack_damage(_amount)
 {
+	AUDIO.play(sound_attack);
 	target_self();
 	effect_damage(_amount);
 	return true;
@@ -223,6 +224,7 @@ function attack_damage(_amount)
 /// @arg	amount
 function attack_heal_self(_amount)
 {
+	AUDIO.play("snd_enemy_heal");
 	CONTROL.targets = [id];
 	effect_heal(_amount);
 	return true;
@@ -234,6 +236,7 @@ function attack_heal_self(_amount)
 /// @arg	amount
 function attack_heal_ally(_amount)
 {
+	AUDIO.play("snd_enemy_heal");
 	CONTROL.targets = [instance_find(par_enemy, irandom(instance_number(par_enemy) - 1))];
 	effect_heal(_amount);
 	return true;
@@ -247,6 +250,9 @@ function attack_heal_ally(_amount)
 function take_damage(_amount)
 {
 	hp -= _amount;
+	if (object_index == PLAYER) { AUDIO.play("snd_bird_hurt"); }
+	else { AUDIO.play("snd_player_attack"); }
+	
 	if (hp <= 0)
 	{
 		if (object_index == PLAYER)
@@ -280,6 +286,8 @@ function heal(_amount)
 {
 	hp += _amount;
 	hp = clamp(hp, 0, hp_max);
+	
+	if (object_index == PLAYER) { AUDIO.play("snd_player_heal"); }
 }
 #endregion
 #region gain_sap(amount);

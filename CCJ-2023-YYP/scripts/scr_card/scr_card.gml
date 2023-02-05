@@ -113,6 +113,7 @@ function Card(_card_id, _name, _description, _cost) constructor
 	/// @desc Plays the card (enqueuing all of its effects).
 	static play = function()
 	{
+		AUDIO.play("snd_card_place");
 		var _size = array_length(_functions);
 		for (var i = 0; i < _size; i++)
 		{

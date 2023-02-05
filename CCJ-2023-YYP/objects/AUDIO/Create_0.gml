@@ -16,7 +16,7 @@ sound_count = 0;
 /// @param [pitch_0.05]
 /// @param [pitch_off]
 /// @param [loop]
-function play(_sound, _volume = V_SOUND, _pitch = 0.05, _pitch_off = 0, _loop = false)
+function play(_sound, _volume = V_SOUND, _pitch = 0.00, _pitch_off = 0, _loop = false)
 {
 	static sound_list = [];
 	
