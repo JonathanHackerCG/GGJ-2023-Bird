@@ -472,6 +472,7 @@
     {"name":"input_binding_mouse_button","order":4,"path":"scripts/input_binding_mouse_button/input_binding_mouse_button.yy",},
     {"name":"input_tick","order":10,"path":"scripts/input_tick/input_tick.yy",},
     {"name":"__shd_scribble_bake_outline_4dir","order":1,"path":"shaders/__shd_scribble_bake_outline_4dir/__shd_scribble_bake_outline_4dir.yy",},
+    {"name":"spr_credit","order":7,"path":"sprites/spr_credit/spr_credit.yy",},
     {"name":"__input_steam_handles_changed","order":34,"path":"scripts/__input_steam_handles_changed/__input_steam_handles_changed.yy",},
     {"name":"input_player_reset","order":3,"path":"scripts/input_player_reset/input_player_reset.yy",},
     {"name":"input_y","order":5,"path":"scripts/input_y/input_y.yy",},

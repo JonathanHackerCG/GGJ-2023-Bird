@@ -545,6 +545,7 @@
     {"id":{"name":"input_binding_mouse_button","path":"scripts/input_binding_mouse_button/input_binding_mouse_button.yy",},"order":4,},
     {"id":{"name":"input_tick","path":"scripts/input_tick/input_tick.yy",},"order":10,},
     {"id":{"name":"__shd_scribble_bake_outline_4dir","path":"shaders/__shd_scribble_bake_outline_4dir/__shd_scribble_bake_outline_4dir.yy",},"order":1,},
+    {"id":{"name":"spr_credit","path":"sprites/spr_credit/spr_credit.yy",},"order":0,},
     {"id":{"name":"spr_transition","path":"sprites/spr_transition/spr_transition.yy",},"order":0,},
     {"id":{"name":"__input_steam_handles_changed","path":"scripts/__input_steam_handles_changed/__input_steam_handles_changed.yy",},"order":34,},
     {"id":{"name":"scr_define_cards","path":"scripts/scr_define_cards/scr_define_cards.yy",},"order":0,},
