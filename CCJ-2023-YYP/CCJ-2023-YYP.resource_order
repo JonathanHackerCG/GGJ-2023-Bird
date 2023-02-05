@@ -264,6 +264,7 @@
     {"name":"rm_1_3","order":2,"path":"rooms/rm_1_3/rm_1_3.yy",},
     {"name":"__input_gamepad_reset_color","order":10,"path":"scripts/__input_gamepad_reset_color/__input_gamepad_reset_color.yy",},
     {"name":"input_cursor_speed_get","order":12,"path":"scripts/input_cursor_speed_get/input_cursor_speed_get.yy",},
+    {"name":"fnt_card_number","order":2,"path":"fonts/fnt_card_number/fnt_card_number.yy",},
     {"name":"__input_load_blacklist_csv","order":23,"path":"scripts/__input_load_blacklist_csv/__input_load_blacklist_csv.yy",},
     {"name":"input_binding_get","order":2,"path":"scripts/input_binding_get/input_binding_get.yy",},
     {"name":"__input_initialize","order":18,"path":"scripts/__input_initialize/__input_initialize.yy",},

@@ -15,8 +15,9 @@ function get_card(_card_id)
 /// @desc Card "class" for putting into the Deck and playing during combat.
 /// @arg	card_id
 /// @arg	name
+/// @arg	description
 /// @arg	cost
-function Card(_card_id, _name, _cost) constructor
+function Card(_card_id, _name, _description, _cost) constructor
 {
 	static _uid = 0;
 	uid = _uid++;
@@ -54,6 +55,23 @@ function Card(_card_id, _name, _cost) constructor
 	}
 	#endregion
 	set_name(_name);
+	
+	#region get_description();
+	/// @func get_description():
+	static get_description = function()
+	{
+		return _description;
+	}
+	#endregion
+	#region set_description(_description);
+	/// @func set_description(id):
+	static set_description = function(_description)
+	{
+		self._description = _description;
+		return self;
+	}
+	#endregion
+	set_description(_description);
 	
 	#region get_cost();
 	/// @func get_cost():
@@ -112,6 +130,7 @@ function Card(_card_id, _name, _cost) constructor
 		{
 			_y -= SELECTED_OFFSET;
 			draw_sprite_animated(spr_card_shimmer, _x, _y);
+			show_debug_message(string(get_cost()));
 			if (input_check_pressed("confirm") && PLAYER.sap >= get_cost())
 			{
 				input_consume("confirm");
@@ -123,6 +142,13 @@ function Card(_card_id, _name, _cost) constructor
 		
 		draw_sprite(spr_card_front, get_id(), _x, _y);
 		draw_text_set(_x + 32, _y + 48, get_name(), fnt_card_name, fa_left, fa_center, c_black);
+		draw_text_set(_x + 224, _y + 16, string(get_cost()), fnt_card_number, fa_center, fa_center, c_white);
+		
+		draw_set_font(fnt_card_description);
+		draw_set_color(c_black);
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);
+		draw_text_ext(_x + 32, _y + 340, get_description(), 20, 230);
 	}
 	#endregion
 	
@@ -131,7 +157,7 @@ function Card(_card_id, _name, _cost) constructor
 	/// @desc Returns a deep copy of the Card.
 	static copy = function()
 	{
-		var _card = new Card(get_id(), get_name(), get_cost());
+		var _card = new Card(get_id(), get_name(), get_description(), get_cost());
 		array_copy(_card._functions, 0, _functions, 0, array_length(_functions));
 		array_copy(_card._parameters, 0, _parameters, 0, array_length(_parameters));
 		return _card;
@@ -145,10 +171,11 @@ function Card(_card_id, _name, _cost) constructor
 /// @desc Creates a new Card with the provided properties. Returns the Card.
 /// @arg	card_id
 /// @arg	name
+/// @arg	description
 /// @arg	cost
-function create_card(_card_id, _name, _cost)
+function create_card(_card_id, _name, _description, _cost)
 {
-	var _card = new Card(_card_id, _name, _cost);
+	var _card = new Card(_card_id, _name, _description, _cost);
 	card_index[_card_id] = _card;
 	return _card;
 }

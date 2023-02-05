@@ -10,6 +10,56 @@ function target_self()
 	return true;
 }
 #endregion
+#region target_enemy_strongest();
+/// @func target_enemy_strongest():
+/// @desc Targets the enemy with the highest HP.
+function target_enemy_strongest()
+{
+	var _temp = [];
+	array_copy(_temp, 0, CONTROL.enemies, 0, instance_number(par_enemy));
+	_temp = array_shuffle(_temp);
+	
+	var _hp = -1;
+	var _choice = noone;
+	var _size = array_length(_temp);
+	for (var i = 0; i < _size; i++)
+	{
+		var _enemy = _temp[i];
+		if (_hp == -1 || _enemy.hp > _hp)
+		{
+			_choice = _enemy;
+			_hp = _choice.hp;
+		}
+	}
+	CONTROL.targets = [_choice];
+	return true;
+}
+#endregion
+#region target_enemy_weakest();
+/// @func target_enemy_weakest():
+/// @desc Targets the enemy with the lowest HP.
+function target_enemy_weakest()
+{
+	var _temp = [];
+	array_copy(_temp, 0, CONTROL.enemies, 0, instance_number(par_enemy));
+	_temp = array_shuffle(_temp);
+	
+	var _hp = -1;
+	var _choice = noone;
+	var _size = array_length(_temp);
+	for (var i = 0; i < _size; i++)
+	{
+		var _enemy = _temp[i];
+		if (_hp == -1 || _enemy.hp < _hp)
+		{
+			_choice = _enemy;
+			_hp = _choice.hp;
+		}
+	}
+	CONTROL.targets = [_choice];
+	return true;
+}
+#endregion
 #region target_enemy_random(number);
 /// @func target_enemy_random():
 /// @desc Targets a random number of enemies.
@@ -164,6 +214,28 @@ function attack_damage(_amount)
 {
 	target_self();
 	effect_damage(_amount);
+	return true;
+}
+#endregion
+#region attack_heal_self(_amount);
+/// @func attack_heal_self
+/// @desc Heals the enemy for an amount.
+/// @arg	amount
+function attack_heal_self(_amount)
+{
+	CONTROL.targets = [id];
+	effect_heal(_amount);
+	return true;
+}
+#endregion
+#region attack_heal_ally(_amount)
+/// @func attack_heal_ally
+/// @desc Heals a random ally for an amount.
+/// @arg	amount
+function attack_heal_ally(_amount)
+{
+	CONTROL.targets = [instance_find(par_enemy, irandom(instance_number(par_enemy) - 1))];
+	effect_heal(_amount);
 	return true;
 }
 #endregion
