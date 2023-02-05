@@ -262,19 +262,15 @@ function Deck() constructor
 	}
 	#endregion
 	
-	gain_card(card.cardA);
-	gain_card(card.cardA);
-	gain_card(card.cardA);
-	gain_card(card.cardB);
-	gain_card(card.cardB);
-	gain_card(card.cardB);
-	gain_card(card.cardC);
-	gain_card(card.cardC);
-	gain_card(card.cardC);
-	gain_card(card.cardD);
-	gain_card(card.cardD);
-	gain_card(card.cardD);
-	gain_card(card.cardE);
-	gain_card(card.cardE);
-	gain_card(card.cardE);
+	gain_card(card.Heal);
+	gain_card(card.Heal);
+	gain_card(card.Heal);
+	gain_card(card.Heal);
+	gain_card(card.Beetle_Small_1);
+	gain_card(card.Beetle_Small_1);
+	gain_card(card.Beetle_Small_1);
+	gain_card(card.Beetle_Small_2);
+	gain_card(card.Beetle_Small_2);
+	gain_card(card.Beetle_Small_2);
+	gain_card(card.Rock);
 }

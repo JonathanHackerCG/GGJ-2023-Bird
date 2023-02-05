@@ -33,7 +33,6 @@ function start_combat()
 	{
 		return a.x > b.x;
 	});
-	show_debug_message(enemies);
 	
 	player_deck.start();
 	in_combat = true;

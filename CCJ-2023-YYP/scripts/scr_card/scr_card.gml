@@ -130,7 +130,6 @@ function Card(_card_id, _name, _description, _cost) constructor
 		{
 			_y -= SELECTED_OFFSET;
 			draw_sprite_animated(spr_card_shimmer, _x, _y);
-			show_debug_message(string(get_cost()));
 			if (input_check_pressed("confirm") && PLAYER.sap >= get_cost())
 			{
 				input_consume("confirm");
