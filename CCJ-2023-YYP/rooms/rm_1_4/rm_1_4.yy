@@ -11,6 +11,8 @@
     {"name":"inst_5EDA670A_2","path":"rooms/rm_1_4/rm_1_4.yy",},
     {"name":"inst_249A02C_2","path":"rooms/rm_1_4/rm_1_4.yy",},
     {"name":"inst_6A5B33C6_2","path":"rooms/rm_1_4/rm_1_4.yy",},
+    {"name":"inst_1B8B90CE","path":"rooms/rm_1_4/rm_1_4.yy",},
+    {"name":"inst_121A7251","path":"rooms/rm_1_4/rm_1_4.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -52,6 +54,8 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"target_room","path":"objects/obj_transition/obj_transition.yy",},"value":"noone",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"location","path":"objects/obj_transition/obj_transition.yy",},"value":"\"bottom\"",},
           ],"rotation":0.0,"scaleX":44.0,"scaleY":2.0,"x":80.0,"y":1000.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1B8B90CE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_Beetle_Big","path":"objects/obj_Beetle_Big/obj_Beetle_Big.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1000.0,"y":280.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_121A7251","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_Beetle_Small","path":"objects/obj_Beetle_Small/obj_Beetle_Small.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":840.0,"y":320.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Background_Tiles_1","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":27,"SerialiseWidth":48,"TileCompressedData":[
 -114,1498,4,789,790,791,792,-44,1498,4,853,854,855,856,-44,1498,4,917,918,919,920,-44,1498,4,981,982,983,984,-44,1498,4,1045,1046,1047,1048,-44,1498,4,1109,1110,1111,1112,-44,1498,4,1173,1174,1175,
