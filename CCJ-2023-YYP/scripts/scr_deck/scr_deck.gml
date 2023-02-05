@@ -261,4 +261,20 @@ function Deck() constructor
 		recycle();
 	}
 	#endregion
+	
+	gain_card(card.cardA);
+	gain_card(card.cardA);
+	gain_card(card.cardA);
+	gain_card(card.cardB);
+	gain_card(card.cardB);
+	gain_card(card.cardB);
+	gain_card(card.cardC);
+	gain_card(card.cardC);
+	gain_card(card.cardC);
+	gain_card(card.cardD);
+	gain_card(card.cardD);
+	gain_card(card.cardD);
+	gain_card(card.cardE);
+	gain_card(card.cardE);
+	gain_card(card.cardE);
 }

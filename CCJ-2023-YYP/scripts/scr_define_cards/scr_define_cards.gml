@@ -15,7 +15,10 @@ enum card
 #macro STARTING_SAP_AMOUNT 3
 
 create_card(card.cardA, "A Card", 1);
-create_card(card.cardB, "B Card", 1);
+create_card(card.cardB, "Attack Random", 1)
+	.add_effect(target_enemy_random_range, 1, 4)
+	.add_effect(effect_damage, 5);
+
 create_card(card.cardC, "Draw Cards", 1)
 	.add_effect(target_self)
 	.add_effect(effect_draw, 2)
