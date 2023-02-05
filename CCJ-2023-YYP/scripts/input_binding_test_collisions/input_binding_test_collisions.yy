@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Binding Access",
-    "path": "folders/Libraries/Input/Binding Access.yy",
+    "path": "folders/_Libraries/Input/Binding Access.yy",
   },
 }

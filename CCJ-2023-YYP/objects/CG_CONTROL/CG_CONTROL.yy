@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "REQUIRED",
-    "path": "folders/REQUIRED.yy",
+    "name": "_REQUIRED",
+    "path": "folders/_REQUIRED.yy",
   },
   "parentObjectId": null,
   "persistent": true,

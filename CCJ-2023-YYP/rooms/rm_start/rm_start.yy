@@ -37,7 +37,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"target_room","path":"objects/obj_transition/obj_transition.yy",},"value":"noone",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"location","path":"objects/obj_transition/obj_transition.yy",},"value":"\"bottom\"",},
           ],"rotation":0.0,"scaleX":44.0,"scaleY":2.0,"x":80.0,"y":1000.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7AD12104","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":840.0,"y":520.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7AD12104","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"PLAYER","path":"objects/PLAYER/PLAYER.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":840.0,"y":520.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Background_Tiles","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":27,"SerialiseWidth":48,"TileCompressedData":[
 -355,-2147483648,-2,0,1,1245,-46,-2147483648,-3,1245,-889,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tst_tileset_1","path":"tilesets/tst_tileset_1/tst_tileset_1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
@@ -45,7 +45,7 @@
   ],
   "parent": {
     "name": "Floor 1",
-    "path": "folders/Rooms/Floor 1.yy",
+    "path": "folders/Rooms - Jaden/Floor 1.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

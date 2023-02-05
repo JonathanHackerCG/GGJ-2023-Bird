@@ -99,12 +99,38 @@ function Card(_card_id, _name, _cost) constructor
 		}
 	}
 	#endregion
-	//effects[]
-		//effect
-		//params...
-	//targets[]
-		//target
-		//params...
+	#region _draw_input(x, y);
+	/// @func _draw_input(x, y, selected);
+	/// @desc Internal draw method called by Deck.
+	static _draw_input = function(_x, _y, _selected)
+	{
+		static SELECTED_OFFSET = 32;
+		if (_selected)
+		{
+			_y -= SELECTED_OFFSET;
+			if (input_check_pressed("confirm"))
+			{
+				play();
+				CONTROL.player_deck.discard(self);
+			}
+		}
+		
+		draw_sprite(spr_card_front, 0, _x, _y);
+		draw_text_set(_x + 32, _y + 48, get_name(), fnt_card_name, fa_left, fa_center, c_black);
+	}
+	#endregion
+	
+	#region copy();
+	/// @func copy
+	/// @desc Returns a deep copy of the Card.
+	static copy = function()
+	{
+		var _card = new Card(get_id(), get_name(), get_cost());
+		array_copy(_card._functions, 0, _functions, 0, array_length(_functions));
+		array_copy(_card._parameters, 0, _parameters, 0, array_length(_parameters));
+		return _card;
+	}
+	#endregion
 }
 #endregion
 

@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Sources",
-    "path": "folders/Libraries/Input/Sources.yy",
+    "path": "folders/_Libraries/Input/Sources.yy",
   },
 }

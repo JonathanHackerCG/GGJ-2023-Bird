@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Mouse (Direct)",
-    "path": "folders/Libraries/Input/Mouse (Direct).yy",
+    "path": "folders/_Libraries/Input/Mouse (Direct).yy",
   },
 }

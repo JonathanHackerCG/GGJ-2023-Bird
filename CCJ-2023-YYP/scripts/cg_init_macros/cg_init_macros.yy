@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "REQUIRED",
-    "path": "folders/REQUIRED.yy",
+    "name": "_REQUIRED",
+    "path": "folders/_REQUIRED.yy",
   },
 }

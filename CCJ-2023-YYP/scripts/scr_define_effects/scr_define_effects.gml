@@ -6,7 +6,7 @@
 /// @desc Targets the player!
 function target_self()
 {
-	CONTROL.targets = [obj_player];
+	CONTROL.targets = [PLAYER];
 	return true;
 }
 #endregion
@@ -20,8 +20,7 @@ function effect_damage(_amount)
 {
 	_with_targets(function(_amount)
 	{
-		show_debug_message(self);
-		show_debug_message(_amount);
+		take_damage(_amount);
 	}, [_amount]);
 	return true;
 }
@@ -36,10 +35,23 @@ function effect_damage_range(_minimum, _maximum)
 	_with_targets(function(_minimum, _maximum)
 	{
 		var _amount = irandom_range(_minimum, _maximum);
-		show_debug_message(self);
-		show_debug_message(_amount);
+		take_damage(_amount);
 	}, [_minimum, _maximum]);
 	return true;
+}
+#endregion
+
+//Damage handling.
+#region take_damage(amount);
+/// @func take_damage
+/// @arg	amount
+function take_damage(_amount)
+{
+	hp -= _amount;
+	if (hp <= 0)
+	{
+		show_debug_message("DEAD!");
+	}
 }
 #endregion
 

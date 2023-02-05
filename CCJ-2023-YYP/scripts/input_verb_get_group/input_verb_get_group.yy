@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Verbs",
-    "path": "folders/Libraries/Input/Verbs.yy",
+    "path": "folders/_Libraries/Input/Verbs.yy",
   },
 }

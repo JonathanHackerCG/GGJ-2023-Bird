@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Trigger Effects",
-    "path": "folders/Libraries/Input/Trigger Effects.yy",
+    "path": "folders/_Libraries/Input/Trigger Effects.yy",
   },
 }

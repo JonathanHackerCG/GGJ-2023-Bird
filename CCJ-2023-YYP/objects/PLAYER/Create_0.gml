@@ -2,7 +2,7 @@
 event_inherited();
 
 //Deleting extra copies of the player.
-if (instance_number(obj_player) > 1)
+if (instance_number(PLAYER) > 1)
 {
 	instance_destroy();
 	exit;
@@ -10,6 +10,8 @@ if (instance_number(obj_player) > 1)
 
 //Player Stats
 move_speed = 4;
+hp = 100;
+hp_max = 100;
 
 //Pathfinding
 gox = x;

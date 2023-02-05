@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Extended Verbs",
-    "path": "folders/Libraries/Input/Extended Verbs.yy",
+    "path": "folders/_Libraries/Input/Extended Verbs.yy",
   },
 }
