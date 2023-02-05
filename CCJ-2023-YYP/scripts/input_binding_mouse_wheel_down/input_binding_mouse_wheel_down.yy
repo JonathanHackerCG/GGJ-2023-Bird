@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Binding Creators",
-    "path": "folders/Libraries/Input/Binding Creators.yy",
+    "path": "folders/_Libraries/Input/Binding Creators.yy",
   },
 }

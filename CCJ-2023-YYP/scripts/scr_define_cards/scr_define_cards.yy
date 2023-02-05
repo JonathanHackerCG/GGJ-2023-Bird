@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Combat",
-    "path": "folders/Combat.yy",
+    "name": "Cards - Mark",
+    "path": "folders/Cards - Mark.yy",
   },
 }

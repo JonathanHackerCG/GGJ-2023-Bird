@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "2D Checkers",
-    "path": "folders/Libraries/Input/2D Checkers.yy",
+    "path": "folders/_Libraries/Input/2D Checkers.yy",
   },
 }

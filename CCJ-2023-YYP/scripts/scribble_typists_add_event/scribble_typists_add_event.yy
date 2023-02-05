@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Miscellaneous",
-    "path": "folders/Libraries/Scribble/Miscellaneous.yy",
+    "path": "folders/_Libraries/Scribble/Miscellaneous.yy",
   },
 }

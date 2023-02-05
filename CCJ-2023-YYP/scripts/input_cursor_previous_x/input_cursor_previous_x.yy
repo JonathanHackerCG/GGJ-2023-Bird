@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Cursor",
-    "path": "folders/Libraries/Input/Cursor.yy",
+    "path": "folders/_Libraries/Input/Cursor.yy",
   },
 }

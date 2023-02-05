@@ -36,13 +36,13 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"target_room","path":"objects/obj_transition/obj_transition.yy",},"value":"noone",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"location","path":"objects/obj_transition/obj_transition.yy",},"value":"\"bottom\"",},
           ],"rotation":0.0,"scaleX":44.0,"scaleY":2.0,"x":80.0,"y":1000.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7AD12104","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":840.0,"y":520.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7AD12104","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"PLAYER","path":"objects/PLAYER/PLAYER.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":840.0,"y":520.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4282975052,"depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "parent": {
     "name": "Floor 1",
-    "path": "folders/Rooms/Floor 1.yy",
+    "path": "folders/Rooms - Jaden/Floor 1.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

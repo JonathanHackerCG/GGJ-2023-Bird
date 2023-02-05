@@ -18,7 +18,7 @@ function Deck() constructor
 	static gain_card = function(_card_id)
 	{
 		var _card = get_card(_card_id);
-		array_push(_cards, _card);
+		array_push(_cards, _card.copy());
 	}
 	#endregion
 	#region get_size();
@@ -102,6 +102,25 @@ function Deck() constructor
 		}
 	}
 	#endregion
+	#region discard(_card);
+	/// @func discard
+	/// @desc Discards a specific card.
+	/// @arg	card
+	static discard = function(_card)
+	{
+		var _size = array_length(_cards_hand);
+		for (var i = 0; i < _size; i++)
+		{
+			if (_cards_hand[i] == _card)
+			{
+				array_push(_cards_discard, _card);
+				array_delete(_cards_hand, i, 1);
+				return true;
+			}
+		}
+		return false;
+	}
+	#endregion
 	
 	//Metagame
 	#region start();
@@ -134,6 +153,64 @@ function Deck() constructor
 			show_debug_message("Reset");
 			show_debug_message(print());
 		}
+	}
+	#endregion
+	#region draw_input();
+	static draw_input = function()
+	{
+		static STACK_SPACING = 8;
+		static STACK_HEIGHT = 10;
+		static DRAW_MAX_WIDTH = UI.draw_end_x - UI.draw_x;
+		static DRAW_MAX_SPACING = 256;
+		
+		#region Card piles.
+		var count = 0;
+		repeat(min(STACK_HEIGHT, array_length(_cards_library)))
+		{
+			draw_sprite(spr_card_back, 0, UI.library_x, UI.library_y - (count * STACK_SPACING));
+			count ++;
+		}
+		count = 0;
+		repeat(min(STACK_HEIGHT, array_length(_cards_discard)))
+		{
+			draw_sprite(spr_card_back_discard, 0, UI.discard_x, UI.discard_y - (count * STACK_SPACING));
+			count ++;
+		}
+		#endregion
+		#region Selecting a card to play.
+		var _hand_size = array_length(_cards_hand);
+		var _dis = 144;
+		var _selection = -1;
+		var _selection_offset = 0;
+		if (mouse_y >= UI.draw_y)
+		{
+			for (var i = 0; i < _hand_size; i++)
+			{
+				var _offset = i * min(DRAW_MAX_SPACING, DRAW_MAX_WIDTH / _hand_size);
+				var _xpos = UI.draw_x + _offset + 144;
+				if (abs(mouse_x - _xpos) < _dis)
+				{
+					_selection = i;
+					_selection_offset = _offset;
+					_dis = abs(mouse_x - _xpos);
+				}
+			}
+		}
+		#endregion
+		#region Drawing player's hand.
+		for (var i = 0; i < _hand_size; i++)
+		{
+			var _offset = i * min(DRAW_MAX_SPACING, DRAW_MAX_WIDTH / _hand_size);
+			if (i != _selection)
+			{
+				_cards_hand[i]._draw_input(UI.draw_x + _offset, UI.draw_y, false);
+			}
+		}
+		if (_selection != -1)
+		{
+			_cards_hand[_selection]._draw_input(UI.draw_x + _selection_offset, UI.draw_y, true);
+		}
+		#endregion
 	}
 	#endregion
 	
@@ -176,11 +253,6 @@ function Deck() constructor
 	/// @desc Performs a bunch of unit tests.
 	static test = function()
 	{
-		gain_card(card.cardA);
-		gain_card(card.cardB);
-		gain_card(card.cardC);
-		gain_card(card.cardD);
-		gain_card(card.cardE);
 		start();
 		
 		draw(3);

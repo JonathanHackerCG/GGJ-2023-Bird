@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Gyro",
-    "path": "folders/Libraries/Input/Gyro.yy",
+    "path": "folders/_Libraries/Input/Gyro.yy",
   },
 }

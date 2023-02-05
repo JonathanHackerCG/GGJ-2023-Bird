@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Vibration",
-    "path": "folders/Libraries/Input/Vibration.yy",
+    "path": "folders/_Libraries/Input/Vibration.yy",
   },
 }

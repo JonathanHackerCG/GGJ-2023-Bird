@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Default Bindings",
-    "path": "folders/Libraries/Input/(System)/Deprecated/Default Bindings.yy",
+    "path": "folders/_Libraries/Input/(System)/Deprecated/Default Bindings.yy",
   },
 }

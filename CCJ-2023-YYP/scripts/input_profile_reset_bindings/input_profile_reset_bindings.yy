@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Profiles",
-    "path": "folders/Libraries/Input/Profiles.yy",
+    "path": "folders/_Libraries/Input/Profiles.yy",
   },
 }

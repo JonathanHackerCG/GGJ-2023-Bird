@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Configuration - Please edit these scripts!",
-    "path": "folders/Libraries/Input/Configuration - Please edit these scripts!.yy",
+    "path": "folders/_Libraries/Input/Configuration - Please edit these scripts!.yy",
   },
 }

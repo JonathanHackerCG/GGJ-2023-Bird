@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Keyboard (Direct)",
-    "path": "folders/Libraries/Input/Keyboard (Direct).yy",
+    "path": "folders/_Libraries/Input/Keyboard (Direct).yy",
   },
 }

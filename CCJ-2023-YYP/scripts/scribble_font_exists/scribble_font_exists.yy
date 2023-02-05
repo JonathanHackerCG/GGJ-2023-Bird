@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Fonts",
-    "path": "folders/Libraries/Scribble/Fonts.yy",
+    "path": "folders/_Libraries/Scribble/Fonts.yy",
   },
 }

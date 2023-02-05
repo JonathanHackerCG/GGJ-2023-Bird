@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Checkers",
-    "path": "folders/Libraries/Input/Checkers.yy",
+    "path": "folders/_Libraries/Input/Checkers.yy",
   },
 }
