@@ -19,6 +19,21 @@ if (input_check_pressed("move"))
 	path_start(path, move_speed, path_action_stop, true);
 }
 
+//Animations
+var _dir = point_direction(x, y, gox, goy);
+var _dis = point_distance(xprevious, yprevious, x, y);
+
+//Movement/Sprite Logic
+if (path_index != -1)
+{
+	sprite_dir = ((_dir + 45) / 90) % 4;
+	sprite_index = sprites_walk[sprite_dir];
+}
+else
+{
+	sprite_index = sprites_idle[sprite_dir];
+}
+
 //Room transitions.
 var _off = CELLSIZE * 1.5;
 if (x <= _off || y <= _off || x >= SCREEN_W - _off || y >= SCREEN_H - _off)
