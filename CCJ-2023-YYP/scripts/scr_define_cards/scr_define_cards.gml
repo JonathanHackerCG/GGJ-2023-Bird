@@ -48,12 +48,14 @@ create_card(card.Rock, "Rock", "", 0)
 create_card(card.Beetle_Small_1, "Beetle", "", 1)
 	.add_effect(target_enemy_random, 1) // Change to random enemy
 	.add_effect(effect_damage, 4)
-	.add_effect(effect_sap, 1);
+	.add_effect(target_self)
+	.add_effect(effect_heal, 1);
 	
 create_card(card.Beetle_Small_2, "Beetle", "", 1)
 	.add_effect(target_enemy_weakest) // Change to lowest health
 	.add_effect(effect_damage, 3)
-	.add_effect(effect_sap, 1);
+	.add_effect(target_self)
+	.add_effect(effect_heal, 1);
 	
 create_card(card.Beetle_Small_3, "Beetle", "", 1)
 	.add_effect(target_enemy_weakest) // Change to lowest damage
