@@ -14,3 +14,8 @@ for (var xx = 0; xx < SCREEN_W / CELLSIZE; xx++) {
 		mp_grid_add_cell(collision, xx, yy);
 	}
 } }
+
+if (instance_exists(par_enemy))
+{
+	start_combat();
+}

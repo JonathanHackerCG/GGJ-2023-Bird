@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "fnt_card_name",
+  "name": "fnt_card_number",
   "AntiAlias": 1,
   "applyKerning": 0,
   "ascender": 23,
