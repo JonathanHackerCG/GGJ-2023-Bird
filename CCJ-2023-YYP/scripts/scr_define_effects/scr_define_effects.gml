@@ -1,5 +1,6 @@
 /// @desc File containing the functions that can be used as card effects and targets.
 
+//Targeting functions.
 #region target_self();
 /// @func target_self
 /// @desc Targets the player!
@@ -10,6 +11,7 @@ function target_self()
 }
 #endregion
 
+//Attacking functions.
 #region effect_damage(amount);
 /// @func effect_damage();
 /// @desc Deal a set amount of damage.
@@ -41,6 +43,7 @@ function effect_damage_range(_minimum, _maximum)
 }
 #endregion
 
+//Internal usage (don't touch).
 #region _with_targets(function, parameters);
 /// @func _with_targets
 /// @arg	_function

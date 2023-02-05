@@ -21,9 +21,12 @@ if (input_check_pressed("move"))
 var _off = CELLSIZE * 1.5;
 if (x <= _off || y <= _off || x >= SCREEN_W - _off || y >= SCREEN_H - _off)
 {
-	var _inst = instance_place(x, y, obj_transition);
+	show_debug_message("A");
+	var _inst = instance_position(x, y, obj_transition);
+	show_debug_message(_inst.target_room);
 	if (instance_exists(_inst) && _inst.target_room != noone)
 	{
+		show_debug_message("B");
 		_off = _off * 2;
 		switch (_inst.location)
 		{
