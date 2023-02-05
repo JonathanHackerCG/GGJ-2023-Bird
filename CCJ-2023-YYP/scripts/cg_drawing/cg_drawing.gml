@@ -77,3 +77,48 @@ function animate_cos(_rate, _offset = 0)
 	return cos((GAMETICK + _offset) / _rate);
 }
 #endregion
+
+#region draw_sprite_animated(frames);
+/// @function draw_sprite_animated
+/// @param sprite
+/// @param x
+/// @param y
+/// @param [alpha]
+function draw_sprite_animated(_sprite, _x1, _y1, _alpha = 1.0)
+{
+	var _fps = sprite_get_speed(_sprite);
+	var _frames = sprite_get_number(_sprite);
+	var _subimage = (GAMETICK / (_fps * second(1))) % _frames;
+	draw_sprite_alpha(_sprite, _subimage, _x1, _y1, _alpha);
+}
+#endregion
+#region draw_sprite_animated_ext(frames);
+/// @function draw_sprite_animated_ext
+/// @param sprite
+/// @param x
+/// @param y
+/// @param [xscale]
+/// @param [yscale]
+/// @param [angle]
+/// @param [color]
+/// @param [alpha]
+function draw_sprite_animated_ext(_sprite, _x1, _y1, _xscale = 1, _yscale = 1, _angle = 0, _color = c_white, _alpha = 1.0)
+{
+	var _fps = sprite_get_speed(_sprite);
+	var _frames = sprite_get_number(_sprite);
+	var _subimage = (GAMETICK / (_fps * second(1))) % _frames;
+	draw_sprite_ext(_sprite, _subimage, _x1, _y1, _xscale, _yscale, _angle, _color, _alpha);
+}
+#endregion
+#region draw_sprite_alpha(sprite, subimage, x, y, alpha);
+/// @function draw_sprite_alpha
+/// @param sprite
+/// @param subimage
+/// @param x
+/// @param y
+/// @param alpha
+function draw_sprite_alpha(_sprite, _subimage, _x, _y, _alpha)
+{
+	draw_sprite_ext(_sprite, _subimage, _x, _y, 1.0, 1.0, 0, c_white, _alpha);
+}
+#endregion

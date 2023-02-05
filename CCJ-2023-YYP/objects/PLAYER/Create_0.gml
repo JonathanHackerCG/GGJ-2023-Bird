@@ -12,6 +12,8 @@ if (instance_number(PLAYER) > 1)
 move_speed = 4;
 hp = 100;
 hp_max = 100;
+sap = 3;
+sap_max = 9;
 
 //Pathfinding
 gox = x;

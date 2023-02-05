@@ -1,7 +1,7 @@
 /// @desc Deck "class" for holding cards.
 function Deck() constructor
 {
-	debug = true;
+	debug = false;
 	
 	_cards = [];
 	_cards_library = [];
@@ -67,7 +67,8 @@ function Deck() constructor
 	/// @arg	number
 	static draw = function(_number)
 	{
-		repeat(_number)
+		var _hand_size = array_length(_cards_hand);
+		repeat(min(_number, MAX_HAND_SIZE - _hand_size))
 		{
 			if (array_length(_cards_library) <= 0)
 			{
@@ -111,7 +112,7 @@ function Deck() constructor
 		var _size = array_length(_cards_hand);
 		for (var i = 0; i < _size; i++)
 		{
-			if (_cards_hand[i] == _card)
+			if (_cards_hand[i].uid == _card.uid)
 			{
 				array_push(_cards_discard, _card);
 				array_delete(_cards_hand, i, 1);

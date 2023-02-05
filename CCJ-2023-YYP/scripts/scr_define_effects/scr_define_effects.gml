@@ -25,7 +25,7 @@ function effect_damage(_amount)
 	return true;
 }
 #endregion
-#region effect_damage_range();
+#region effect_damage_range(min, max);
 /// @func effect_damage_range(minimum, maximum);
 /// @desc Deal a random amount of damage in a range.
 /// @arg	minimum
@@ -36,6 +36,90 @@ function effect_damage_range(_minimum, _maximum)
 	{
 		var _amount = irandom_range(_minimum, _maximum);
 		take_damage(_amount);
+	}, [_minimum, _maximum]);
+	return true;
+}
+#endregion
+#region effect_heal(amount);
+/// @func effect_heal();
+/// @desc Deal a set amount of heal.
+/// @arg	amount
+function effect_heal(_amount)
+{
+	_with_targets(function(_amount)
+	{
+		heal(_amount);
+	}, [_amount]);
+	return true;
+}
+#endregion
+#region effect_heal_range(min, max);
+/// @func effect_heal_range(minimum, maximum);
+/// @desc Deal a random amount of heal in a range.
+/// @arg	minimum
+/// @arg maximum
+function effect_heal_range(_minimum, _maximum)
+{
+	_with_targets(function(_minimum, _maximum)
+	{
+		var _amount = irandom_range(_minimum, _maximum);
+		heal(_amount);
+	}, [_minimum, _maximum]);
+	return true;
+}
+#endregion
+#region effect_sap(amount);
+/// @func effect_sap();
+/// @desc Give a set amount of sap.
+/// @arg	amount
+function effect_sap(_amount)
+{
+	_with_targets(function(_amount)
+	{
+		gain_sap(_amount);
+	}, [_amount]);
+	return true;
+}
+#endregion
+#region effect_sap_range(min, max);
+/// @func effect_sap_range(minimum, maximum);
+/// @desc Gain a random amount of sap in a range.
+/// @arg	minimum
+/// @arg maximum
+function effect_sap_range(_minimum, _maximum)
+{
+	_with_targets(function(_minimum, _maximum)
+	{
+		var _amount = irandom_range(_minimum, _maximum);
+		gain_sap(_amount);
+	}, [_minimum, _maximum]);
+	return true;
+}
+#endregion
+#region effect_draw(amount);
+/// @func effect_draw();
+/// @desc Draw cards.
+/// @arg	amount
+function effect_draw(_amount)
+{
+	_with_targets(function(_amount)
+	{
+		CONTROL.player_deck.draw(_amount);
+	}, [_amount]);
+	return true;
+}
+#endregion
+#region effect_draw_range(min, max);
+/// @func effect_draw_range(minimum, maximum);
+/// @desc Draw a random number of cards.
+/// @arg	minimum
+/// @arg maximum
+function effect_draw_range(_minimum, _maximum)
+{
+	_with_targets(function(_minimum, _maximum)
+	{
+		var _amount = irandom_range(_minimum, _maximum);
+		CONTROL.player_deck.draw(_amount);
 	}, [_minimum, _maximum]);
 	return true;
 }
@@ -52,6 +136,24 @@ function take_damage(_amount)
 	{
 		show_debug_message("DEAD!");
 	}
+}
+#endregion
+#region heal(amount);
+/// @func heal
+/// @arg	amount
+function heal(_amount)
+{
+	hp += _amount;
+	hp = clamp(hp, 0, hp_max);
+}
+#endregion
+#region gain_sap(amount);
+/// @func gain_sap
+/// @arg	amount
+function gain_sap(_amount)
+{
+	sap += _amount;
+	sap = clamp(sap, 0, sap_max);
 }
 #endregion
 

@@ -3,6 +3,7 @@ event_inherited();
 
 //Updating the card playing queue.
 queue.update();
+phase_queue.update();
 
 //Debugging
 if (keyboard_check_pressed(ord("T")))

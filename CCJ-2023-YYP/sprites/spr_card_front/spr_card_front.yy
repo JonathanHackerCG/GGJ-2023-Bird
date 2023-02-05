@@ -26,7 +26,7 @@
   "origin": 9,
   "parent": {
     "name": "_Assets",
-    "path": "folders/Combat/_Assets.yy",
+    "path": "folders/Cards - Mark/_Assets.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

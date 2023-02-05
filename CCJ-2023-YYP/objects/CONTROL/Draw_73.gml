@@ -1,7 +1,10 @@
 /// @desc CONTROL: Draw End
 event_inherited();
 
-draw_text(16, 16, string(PLAYER.hp) + "/" + string(PLAYER.hp_max));
+draw_set_color(c_black);
+draw_set_font(fnt_card_name);
+draw_text(16, SCREEN_H - 96, "HP: " + string(PLAYER.hp) + "/" + string(PLAYER.hp_max));
+draw_text(16, SCREEN_H - 48, "Sap: " + string(PLAYER.sap) + "/" + string(PLAYER.sap_max));
 
 //Drawing Cards
 if (in_combat)

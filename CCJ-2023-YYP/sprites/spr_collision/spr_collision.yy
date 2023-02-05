@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "_Assets",
-    "path": "folders/Tilesets/_Assets.yy",
+    "path": "folders/Tilesets - Jaden/_Assets.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -15,6 +15,7 @@ INPUT_DEFAULT_PROFILES = {
     {
 			move:			[input_binding_mouse_button(mb_left), input_binding_mouse_button(mb_right)],
 			confirm:	[input_binding_mouse_button(mb_left), input_binding_mouse_button(mb_right)],
+			end_turn:	input_binding_key(vk_space),
 
       pause:		input_binding_key(vk_escape),
     },

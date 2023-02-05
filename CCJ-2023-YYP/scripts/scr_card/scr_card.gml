@@ -18,6 +18,9 @@ function get_card(_card_id)
 /// @arg	cost
 function Card(_card_id, _name, _cost) constructor
 {
+	static _uid = 0;
+	uid = _uid++;
+	
 	#region get_id();
 	/// @func get_id():
 	static get_id = function()
@@ -108,14 +111,17 @@ function Card(_card_id, _name, _cost) constructor
 		if (_selected)
 		{
 			_y -= SELECTED_OFFSET;
-			if (input_check_pressed("confirm"))
+			draw_sprite_animated(spr_card_shimmer, _x, _y);
+			if (input_check_pressed("confirm") && PLAYER.sap >= get_cost())
 			{
+				input_consume("confirm");
+				PLAYER.sap -= get_cost();
 				play();
 				CONTROL.player_deck.discard(self);
 			}
 		}
 		
-		draw_sprite(spr_card_front, 0, _x, _y);
+		draw_sprite(spr_card_front, get_id(), _x, _y);
 		draw_text_set(_x + 32, _y + 48, get_name(), fnt_card_name, fa_left, fa_center, c_black);
 	}
 	#endregion

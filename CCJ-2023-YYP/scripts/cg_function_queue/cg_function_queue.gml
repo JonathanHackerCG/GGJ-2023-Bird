@@ -228,6 +228,11 @@ function FunctionQueue() constructor
 /// @param parameters
 function function_ext(_function, _params)
 {
+	if (is_undefined(_params))
+	{
+		return _function();
+	}
+	
 	var size = ds_list_size(_params);
 	switch(size)
 	{
@@ -251,6 +256,11 @@ function function_ext(_function, _params)
 /// @param parameters
 function function_ext_array(_function, _params)
 {
+	if (is_undefined(_params))
+	{
+		return _function();
+	}
+	
 	var _size = array_length(_params);
 	switch(_size)
 	{
