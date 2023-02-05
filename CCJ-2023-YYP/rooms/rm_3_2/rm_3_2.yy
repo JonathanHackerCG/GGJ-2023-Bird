@@ -43,7 +43,7 @@
   ],
   "parent": {
     "name": "Floor 3",
-    "path": "folders/Rooms/Floor 3.yy",
+    "path": "folders/Rooms - Jaden/Floor 3.yy",
   },
   "parentRoom": null,
   "physicsSettings": {
