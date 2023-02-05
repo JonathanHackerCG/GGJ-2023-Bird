@@ -17,7 +17,8 @@ function Deck() constructor
 	/// @arg	card_id
 	static gain_card = function(_card_id)
 	{
-		array_push(_cards, _card_id);
+		var _card = get_card(_card_id);
+		array_push(_cards, _card);
 	}
 	#endregion
 	#region get_size();
@@ -143,12 +144,30 @@ function Deck() constructor
 	static print = function()
 	{
 		var _out = "";
-		_out += "Full:		" + string(_cards)					+ "\n";
-		_out += "Library:	" + string(_cards_library)	+ "\n";
-		_out += "Hand:		" + string(_cards_hand)			+ "\n";
-		_out += "Discard:	" + string(_cards_discard)	+ "\n";
-		_out += "Hold:		" + string(_cards_hold)			+ "\n";
-		_out += "Exile:		" + string(_cards_exile)		+ "\n";
+		_out += "Full:		" + print_card_names(_cards)					+ "\n";
+		_out += "Library:	" + print_card_names(_cards_library)	+ "\n";
+		_out += "Hand:		" + print_card_names(_cards_hand)			+ "\n";
+		_out += "Discard:	" + print_card_names(_cards_discard)	+ "\n";
+		_out += "Hold:		" + print_card_names(_cards_hold)			+ "\n";
+		_out += "Exile:		" + print_card_names(_cards_exile)		+ "\n";
+		return _out;
+	}
+	#endregion
+	#region print_card_names(array);
+	/// @func print
+	/// @desc Prints the names of the cards in an array.
+	/// @arg	array
+	static print_card_names = function(_array)
+	{
+		var _out = "[";
+		var _size = array_length(_array);
+		for (var i = 0; i < _size; i++)
+		{
+			var _card = _array[i];
+			_out += _card.get_name();
+			if (i != _size - 1) { _out += ", "; }
+		}
+		_out += "]";
 		return _out;
 	}
 	#endregion
@@ -157,11 +176,11 @@ function Deck() constructor
 	/// @desc Performs a bunch of unit tests.
 	static test = function()
 	{
-		gain_card("A");
-		gain_card("B");
-		gain_card("C");
-		gain_card("D");
-		gain_card("E");
+		gain_card(card.cardA);
+		gain_card(card.cardB);
+		gain_card(card.cardC);
+		gain_card(card.cardD);
+		gain_card(card.cardE);
 		start();
 		
 		draw(3);

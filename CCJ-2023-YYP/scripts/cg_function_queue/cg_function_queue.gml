@@ -116,10 +116,10 @@ function FunctionQueue() constructor
 		}
 		else
 		{
-			if (_target == noone) { done = func(params); }
+			if (_target == noone) { done = function_ext_array(func, params); }
 			else
 			{
-				with(_target) { done = func(params); }
+				with(_target) { done = function_ext_array(func, params); }
 				if (!instance_exists(_target)) { return false; }
 			}
 		}
@@ -223,7 +223,7 @@ function FunctionQueue() constructor
 }
 
 #region function_ext(_function, _params);
-/// @description Runs a functin/method with a list of parameters.
+/// @description Runs a function/method with a list of parameters.
 /// @param function
 /// @param parameters
 function function_ext(_function, _params)
@@ -241,6 +241,29 @@ function function_ext(_function, _params)
 		case 7: return _function(_params[| 0], _params[| 1], _params[| 2], _params[| 3], _params[| 4], _params[| 5], _params[| 6]);
 		case 8: return _function(_params[| 0], _params[| 1], _params[| 2], _params[| 3], _params[| 4], _params[| 5], _params[| 6], _params[| 7]);
 		case 9: return _function(_params[| 0], _params[| 1], _params[| 2], _params[| 3], _params[| 4], _params[| 5], _params[| 6], _params[| 7], _params[| 8]);
+		default: show_error("Too many arguments. Update function_ext to make it work, you nitwit!", false); return false;
+	}
+}
+#endregion
+#region function_ext_array(_function, _params);
+/// @description Runs a function/method with a list of parameters.
+/// @param function
+/// @param parameters
+function function_ext_array(_function, _params)
+{
+	var _size = array_length(_params);
+	switch(_size)
+	{
+		case 0: return _function();
+		case 1: return _function(_params[0]);
+		case 2: return _function(_params[0], _params[1]);
+		case 3: return _function(_params[0], _params[1], _params[2]);
+		case 4: return _function(_params[0], _params[1], _params[2], _params[3]);
+		case 5: return _function(_params[0], _params[1], _params[2], _params[3], _params[4]);
+		case 6: return _function(_params[0], _params[1], _params[2], _params[3], _params[4], _params[5]);
+		case 7: return _function(_params[0], _params[1], _params[2], _params[3], _params[4], _params[5], _params[6]);
+		case 8: return _function(_params[0], _params[1], _params[2], _params[3], _params[4], _params[5], _params[6], _params[7]);
+		case 9: return _function(_params[0], _params[1], _params[2], _params[3], _params[4], _params[5], _params[6], _params[7], _params[8]);
 		default: show_error("Too many arguments. Update function_ext to make it work, you nitwit!", false); return false;
 	}
 }
