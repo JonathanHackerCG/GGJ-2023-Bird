@@ -15,9 +15,10 @@
   "isDnd": false,
   "layers": [
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Collision","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":27,"SerialiseWidth":48,"TileCompressedData":[
--177,1,-7,0,-35,1,-17,0,-28,1,-24,0,-20,1,-28,0,-18,1,-30,0,-16,1,-32,0,-14,1,-34,0,-13,1,-35,0,-13,1,-35,0,-12,1,-36,0,-12,1,-33,0,-14,1,-33,0,
--15,1,-32,0,-16,1,-31,0,-17,1,-31,0,-18,1,-29,0,-21,1,-27,0,-24,1,-23,0,-29,1,-18,0,-32,1,-16,0,-33,1,-14,0,-35,1,-12,0,-36,1,-12,0,-36,1,-12,0,
--11,1,],"TileDataFormat":1,},"tilesetId":{"name":"tst_collision","path":"tilesets/tst_collision/tst_collision.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+-177,1,1,0,-45,1,-3,0,2,1,0,-36,1,-10,0,2,1,0,-10,1,-2,0,-20,1,-13,0,-2,1,-2,0,-9,1,-2,0,-18,1,-15,0,-2,1,1,0,-10,1,-2,0,-16,1,
+-17,0,-10,1,2,0,1,-3,0,-14,1,-22,0,-2,1,-10,0,-13,1,-35,0,-16,1,-32,0,-16,1,-32,0,-16,1,-29,0,-14,1,-33,0,-16,1,-29,0,2,1,0,-16,1,-31,0,
+-17,1,-23,0,1,1,-5,0,-20,1,-21,0,-3,1,-4,0,-25,1,-16,0,-3,1,-4,0,-26,1,-15,0,-4,1,-3,0,-29,1,-18,0,-32,1,-14,0,-35,1,-13,0,-36,1,-12,0,
+-36,1,-12,0,-36,1,-12,0,-11,1,],"TileDataFormat":1,},"tilesetId":{"name":"tst_collision","path":"tilesets/tst_collision/tst_collision.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":40,"gridY":40,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A86D934_3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"target_room","path":"objects/obj_transition/obj_transition.yy",},"value":"noone",},
