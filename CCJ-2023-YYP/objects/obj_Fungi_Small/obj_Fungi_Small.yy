@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_fungi_cerberus",
-    "path": "sprites/spr_fungi_cerberus/spr_fungi_cerberus.yy",
+    "name": "IMG_4325",
+    "path": "sprites/IMG_4325/IMG_4325.yy",
   },
   "spriteMaskId": null,
   "visible": true,
