@@ -9,3 +9,5 @@ collision = mp_grid_create(0, 0, SCREEN_W / CELLSIZE, SCREEN_H / CELLSIZE, CELLS
 room_goto(rm_level_1_1);
 
 player_deck = new Deck();
+queue = new FunctionQueue();
+targets = [];
