@@ -2,7 +2,8 @@
 event_inherited();
 
 //Make collision layer invisible.
-//layer_set_visible("Collision", false);
+layer_set_visible("Collision", false);
+with (obj_transition) { visible = false; }
 
 //Convert collision layer into a pathfinding map.
 mp_grid_clear_all(collision);

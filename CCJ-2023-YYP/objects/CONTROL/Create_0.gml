@@ -109,8 +109,8 @@ function exit_combat(_victory)
 {
 	queue.clear();
 	phase_queue.clear();
-	layer_set_visible("Collision", true);
-	with (obj_transition) { visible = true; }
+	//layer_set_visible("Collision", true);
+	//with (obj_transition) { visible = true; }
 	
 	in_combat = false;
 }
