@@ -12,6 +12,8 @@
     {"name":"inst_29E94414","path":"rooms/rm_start/rm_start.yy",},
     {"name":"inst_2D27F9BD","path":"rooms/rm_start/rm_start.yy",},
     {"name":"inst_7AD12104","path":"rooms/rm_start/rm_start.yy",},
+    {"name":"inst_752EE26D","path":"rooms/rm_start/rm_start.yy",},
+    {"name":"inst_61D8E91E","path":"rooms/rm_start/rm_start.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -82,6 +84,10 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"location","path":"objects/obj_transition/obj_transition.yy",},"value":"\"bottom\"",},
           ],"rotation":0.0,"scaleX":44.0,"scaleY":2.0,"x":80.0,"y":1000.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7AD12104","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"PLAYER","path":"objects/PLAYER/PLAYER.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":840.0,"y":520.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_752EE26D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":320.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_61D8E91E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"properties":[
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"propertyId":{"name":"card_id","path":"objects/obj_card/obj_card.yy",},"value":"card.Heal",},
+          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1000.0,"y":200.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Background_Tiles","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":27,"SerialiseWidth":48,"TileCompressedData":[
 -112,-2147483648,-4,3037,3,917,918,919,-5,3037,-36,-2147483648,-4,3037,3,981,982,983,-5,3037,-32,-2147483648,-4,1965,-4,3037,3,1045,1046,1047,-6,3037,1,1965,-29,-2147483648,19,1965,2972,2973,2843,2843,2844,2845,2846,2843,1109,1110,
