@@ -23,6 +23,7 @@ function start_combat()
 {
 	layer_set_visible("Collision", false);
 	with (obj_transition) { visible = false; }
+	AUDIO.music(choose(msc_battle1, msc_battle2, msc_battle3));
 	
 	enemies = [];
 	with (par_enemy)
@@ -111,9 +112,11 @@ function exit_combat(_victory)
 {
 	queue.clear();
 	phase_queue.clear();
+	AUDIO.music(msc_exploration);
 	//layer_set_visible("Collision", true);
 	//with (obj_transition) { visible = true; }
 	
 	in_combat = false;
 }
 #endregion
+randomize();

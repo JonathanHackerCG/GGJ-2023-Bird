@@ -9,6 +9,7 @@ V_SOUND = 1.0;
 V_MUSIC = 0.4;
 
 sound_count = 0;
+_music = noone;
 #region audio.play();
 /// @function play
 /// @param sound
@@ -45,3 +46,11 @@ function play(_sound, _volume = V_SOUND, _pitch = 0.00, _pitch_off = 0, _loop = 
 	return snd;
 }
 #endregion
+#region audio.music(msc);
+function music(_msc)
+{
+	audio_stop_sound(_music);
+	_music = play(_msc, V_MUSIC, 0, 0, true);
+}
+#endregion
+music(msc_exploration);

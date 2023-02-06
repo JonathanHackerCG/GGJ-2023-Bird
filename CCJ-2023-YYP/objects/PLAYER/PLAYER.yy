@@ -34,6 +34,9 @@
     "name": "spr_player_idle270",
     "path": "sprites/spr_player_idle270/spr_player_idle270.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_player_mask",
+    "path": "sprites/spr_player_mask/spr_player_mask.yy",
+  },
   "visible": true,
 }

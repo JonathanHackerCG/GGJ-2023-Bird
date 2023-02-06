@@ -30,12 +30,11 @@ enum card
 #region Free Cards
 create_card(card.SapAdder, "", "", 0)
 	.add_effect(target_self)
-	.add_effect(effect_sap_range, 1, 2)
-	.add_effect(effect_heal, 1);
+	.add_effect(effect_sap_range, 1, 2);
 	
 create_card(card.Heal, "", "", 0)
 	.add_effect(target_self)
-	.add_effect(effect_sap_range, 3, 5);
+	.add_effect(effect_heal_range, 3, 5);
 	
 create_card(card.Rock, "", "15-30 Attack to Random Enemy \n -10 to 15 Health", 0)
 	.add_effect(target_self)
