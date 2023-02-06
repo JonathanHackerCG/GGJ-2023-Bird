@@ -53,4 +53,4 @@ function music(_msc)
 	_music = play(_msc, V_MUSIC, 0, 0, true);
 }
 #endregion
-music(msc_exploration);
+music(msc_exploration1);

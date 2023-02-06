@@ -112,7 +112,7 @@ function exit_combat(_victory)
 {
 	queue.clear();
 	phase_queue.clear();
-	AUDIO.music(msc_exploration);
+	AUDIO.music(msc_exploration1);
 	//layer_set_visible("Collision", true);
 	//with (obj_transition) { visible = true; }
 	

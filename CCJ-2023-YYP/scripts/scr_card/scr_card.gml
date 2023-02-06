@@ -121,16 +121,41 @@ function Card(_card_id, _name, _description, _cost) constructor
 		}
 	}
 	#endregion
+	
+	surf = undefined;
+	#region _update_surface();
+	/// @func _update_surface();
+	/// @desc	Internal method to update the card drawing surface.
+	static _update_surface = function()
+	{
+		if (surf == undefined || !surface_exists(surf))
+		{
+			surf = surface_create(sprite_get_width(spr_card_front), sprite_get_height(spr_card_front));
+		}
+	}
+	#endregion
 	#region _draw_input(x, y);
 	/// @func _draw_input(x, y, selected);
 	/// @desc Internal draw method called by Deck.
 	static _draw_input = function(_x, _y, _selected)
 	{
 		static SELECTED_OFFSET = 32;
+		static NAME_X = 64;
+		static NAME_Y = 96;
+		static COST_X = 256;
+		static COST_Y = 72;
+		static DESC_X = 68;
+		static DESC_Y = 384;
+		
+		_update_surface();
+		surface_set_target(surf);
+		draw_clear_alpha(c_white, 0.0);
 		if (_selected)
 		{
 			_y -= SELECTED_OFFSET;
-			draw_sprite_animated(spr_card_shimmer, _x, _y);
+			draw_sprite_animated(spr_card_shimmer, 0, 0);
+			
+			#region Playing the card (input).
 			if (input_check_pressed("confirm") && PLAYER.sap >= get_cost())
 			{
 				input_consume("confirm");
@@ -138,17 +163,20 @@ function Card(_card_id, _name, _description, _cost) constructor
 				play();
 				CONTROL.player_deck.discard(self);
 			}
+			#endregion
 		}
 		
-		draw_sprite(spr_card_front, get_id(), _x, _y);
-		draw_text_set(_x + 32, _y + 48, get_name(), fnt_card_name, fa_left, fa_center, c_black);
-		draw_text_set(_x + 224, _y + 16, string(get_cost()), fnt_card_number, fa_center, fa_center, c_white);
-		
-		draw_set_font(fnt_card_description);
-		draw_set_color(c_black);
-		draw_set_halign(fa_left);
-		draw_set_valign(fa_top);
-		draw_text_ext(_x + 32, _y + 340, get_description(), 20, 230);
+		#region Drawing contents of the card.
+		draw_sprite(spr_card_front, get_id(), 0, 0);
+		draw_text_set(NAME_X, NAME_Y, get_name(), fnt_card_name, fa_left, fa_center, c_black);
+		if (get_cost() > 0)
+		{
+			draw_text_set(COST_X, COST_Y, string(get_cost()), fnt_card_number, fa_center, fa_center, c_white);
+		}
+		draw_text_set_ext(DESC_X, DESC_Y, get_description(), 20, 230, fnt_card_description, fa_left, fa_top, c_black);
+		#endregion
+		surface_reset_target();
+		draw_surface(surf, _x, _y);
 	}
 	#endregion
 	

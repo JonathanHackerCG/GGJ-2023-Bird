@@ -284,7 +284,7 @@
     {"name":"obj_ui_card_front","order":1,"path":"objects/obj_ui_card_front/obj_ui_card_front.yy",},
     {"name":"input_binding_get_icon","order":3,"path":"scripts/input_binding_get_icon/input_binding_get_icon.yy",},
     {"name":"scribble_msdf_thickness_offset","order":6,"path":"scripts/scribble_msdf_thickness_offset/scribble_msdf_thickness_offset.yy",},
-    {"name":"msc_battle1","order":1,"path":"sounds/msc_battle1/msc_battle1.yy",},
+    {"name":"msc_exploration1","order":1,"path":"sounds/msc_exploration1/msc_exploration1.yy",},
     {"name":"input_swap_gamepad_ab","order":9,"path":"scripts/input_swap_gamepad_ab/input_swap_gamepad_ab.yy",},
     {"name":"input_motion_data_get","order":4,"path":"scripts/input_motion_data_get/input_motion_data_get.yy",},
     {"name":"rm_3_2","order":1,"path":"rooms/rm_3_2/rm_3_2.yy",},
