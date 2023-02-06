@@ -6,4 +6,4 @@ with (par_ui)
 	variable_instance_set(UI, reference + "_y", y);
 }
 
-room_goto(rm_start);
+room_goto(rm_title);
