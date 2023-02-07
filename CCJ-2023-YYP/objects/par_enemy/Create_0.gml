@@ -8,6 +8,9 @@ attack_parameters = [];
 attack_intents = [];
 attack_index = -1;
 
+healthbar_x = x - sprite_get_xoffset(sprite_index) + (sprite_get_width(sprite_index) / 2);
+healthbar_y = y - sprite_get_yoffset(sprite_index) - HEALTHBAR_Y_OFFSET;
+
 function choose_attack()
 {
 	attack_index = irandom(array_length(attack_options) - 1);

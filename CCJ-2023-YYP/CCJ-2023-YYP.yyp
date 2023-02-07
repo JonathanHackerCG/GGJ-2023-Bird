@@ -182,6 +182,7 @@
     {"id":{"name":"__input_exception_handler","path":"scripts/__input_exception_handler/__input_exception_handler.yy",},"order":5,},
     {"id":{"name":"draw_text_scribble_ext","path":"scripts/draw_text_scribble_ext/draw_text_scribble_ext.yy",},"order":1,},
     {"id":{"name":"input_icons","path":"scripts/input_icons/input_icons.yy",},"order":6,},
+    {"id":{"name":"ui_macros","path":"scripts/ui_macros/ui_macros.yy",},"order":0,},
     {"id":{"name":"input_ignore_key_add","path":"scripts/input_ignore_key_add/input_ignore_key_add.yy",},"order":7,},
     {"id":{"name":"input_gyro_enabled_set","path":"scripts/input_gyro_enabled_set/input_gyro_enabled_set.yy",},"order":1,},
     {"id":{"name":"spr_tileset_1","path":"sprites/spr_tileset_1/spr_tileset_1.yy",},"order":0,},

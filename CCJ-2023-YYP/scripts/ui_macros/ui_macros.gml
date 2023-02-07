@@ -1,0 +1,2 @@
+#macro HEALTHBAR_Y_OFFSET 8
+#macro INTENT_Y_OFFSET 32
