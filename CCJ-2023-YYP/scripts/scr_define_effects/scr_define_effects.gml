@@ -184,7 +184,7 @@ function effect_draw(_amount)
 {
 	_with_targets(function(_amount)
 	{
-		CONTROL.player_deck.draw(_amount);
+		CONTROL.player_deck.draw_cards(_amount);
 	}, [_amount]);
 	return true;
 }
@@ -199,7 +199,7 @@ function effect_draw_range(_minimum, _maximum)
 	_with_targets(function(_minimum, _maximum)
 	{
 		var _amount = irandom_range(_minimum, _maximum);
-		CONTROL.player_deck.draw(_amount);
+		CONTROL.player_deck.draw_cards(_amount);
 	}, [_minimum, _maximum]);
 	return true;
 }

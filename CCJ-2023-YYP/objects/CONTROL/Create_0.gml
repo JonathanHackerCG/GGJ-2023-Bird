@@ -46,7 +46,7 @@ function player_phase_start()
 {
 	AUDIO.play("snd_pass_turn_enemy");
 	PLAYER.sap = STARTING_SAP_AMOUNT;
-	player_deck.draw(STARTING_DRAW_AMOUNT);
+	player_deck.draw_cards(STARTING_DRAW_AMOUNT);
 	with (par_enemy) { choose_attack(); }
 	return true;
 }

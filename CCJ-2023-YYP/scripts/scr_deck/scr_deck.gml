@@ -62,11 +62,11 @@ function Deck() constructor
 		}
 	}
 	#endregion
-	#region draw(number);
-	/// @function draw
+	#region draw_cards(number);
+	/// @function draw_cards
 	/// @desc Draws a number of cards. Will recycle if necessary.
 	/// @arg	number
-	static draw = function(_number)
+	static draw_cards = function(_number)
 	{
 		AUDIO.play("snd_card_draw");
 		var _hand_size = array_length(_cards_hand);
@@ -244,7 +244,7 @@ function Deck() constructor
 		for (var i = 0; i < _size; i++)
 		{
 			var _card = _array[i];
-			_out += _card.get_name();
+			_out += _card.get_name_string();
 			if (i != _size - 1) { _out += ", "; }
 		}
 		_out += "]";
