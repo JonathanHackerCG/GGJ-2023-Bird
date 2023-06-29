@@ -196,7 +196,6 @@ function Card(_card_id, _name, _description, _cost) constructor
 		}
 		
 		#region Drawing contents of the card.
-		draw_rectangle_set(2, 2, sprite_get_width(spr_card_front) - 2, sprite_get_height(spr_card_front) - 2, true, c_lime);
 		draw_sprite(spr_card_front, get_id(), CARD_XOFFSET, CARD_YOFFSET);
 		get_name_scribble().draw(NAME_X, NAME_Y);
 		get_description_scribble().draw(DESC_X, DESC_Y);
@@ -207,8 +206,8 @@ function Card(_card_id, _name, _description, _cost) constructor
 		#endregion
 		surface_reset_target();
 		
-		var xx = _x - CARD_XOFFSET/* + lengthdir_x(CARD_XOFFSET, _angle - 90)*/;
-		var yy = _y - CARD_YOFFSET/* + lengthdir_y(CARD_YOFFSET, _angle - 90)*/;
+		var xx = _x - CARD_XOFFSET;
+		var yy = _y - CARD_YOFFSET;
 		draw_surface_rotated_ext(surf, xx, yy, 1, 1, _angle, c_white, 1.0);
 	}
 	#endregion
