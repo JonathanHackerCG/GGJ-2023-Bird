@@ -209,7 +209,7 @@ function Card(_card_id, _name, _description, _cost) constructor
 		
 		var xx = _x - CARD_XOFFSET/* + lengthdir_x(CARD_XOFFSET, _angle - 90)*/;
 		var yy = _y - CARD_YOFFSET/* + lengthdir_y(CARD_YOFFSET, _angle - 90)*/;
-		draw_surface_ext(surf, xx, yy, 1, 1, _angle, c_white, 1.0);
+		draw_surface_rotated_ext(surf, xx, yy, 1, 1, _angle, c_white, 1.0);
 	}
 	#endregion
 	

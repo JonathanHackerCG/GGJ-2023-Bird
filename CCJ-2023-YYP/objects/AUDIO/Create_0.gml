@@ -5,8 +5,8 @@ event_inherited();
 #macro V_SOUND AUDIO.volume_sound
 #macro V_MUSIC AUDIO.volume_music
 
-V_SOUND = 1.0;
-V_MUSIC = 0.4;
+V_SOUND = 0.5;
+V_MUSIC = 0.0;
 
 sound_count = 0;
 _music = noone;
