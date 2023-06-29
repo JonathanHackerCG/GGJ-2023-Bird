@@ -55,8 +55,6 @@ function player_phase_start()
 /// @func player_phase_input();
 function player_phase_input()
 {
-	player_deck.draw_input();
-	
 	if (!instance_exists(par_enemy))
 	{
 		exit_combat();

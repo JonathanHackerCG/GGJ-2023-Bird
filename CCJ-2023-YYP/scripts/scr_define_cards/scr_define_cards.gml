@@ -65,6 +65,16 @@ create_card(card.Beetle_Big, "Big Beetle", "3-5 Attack to 2 Random Enemies", 3)
 	.add_effect(effect_damage_range, 3, 5);
 #endregion
 
+create_card(card.cardA, "Card", "Do one of two things.", 1)
+	.add_condition(condition_chance, 50)
+		.add_effect(target_self)
+		.add_effect(effect_damage, 5)
+	.end()
+	.else()
+		.add_effect(target_enemy_random)
+		.add_effect(effect_damage, 5)
+	.end()
+
 #region Fungi Cards
 create_card(card.Fungi_Small_1, "Fungi", "4 Attack to Random Enemy \n +1 Health", 2)
 	.add_effect(target_enemy_random, 1)

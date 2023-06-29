@@ -160,9 +160,15 @@ function Card(_card_id, _name, _description, _cost) constructor
 	#region _draw_input(x, y);
 	/// @func _draw_input(x, y, selected);
 	/// @desc Internal draw method called by Deck.
-	static _draw_input = function(_x, _y, _selected)
+	/// @arg	x
+	/// @arg	y
+	/// @arg	[selected]
+	/// @arg	[angle]
+	static _draw_input = function(_x, _y, _selected = false, _angle = 0)
 	{
 		static SELECTED_OFFSET = 32;
+		static CARD_XOFFSET = sprite_get_xoffset(spr_card_front);
+		static CARD_YOFFSET = sprite_get_yoffset(spr_card_front);
 		static NAME_X = 64;
 		static NAME_Y = 96;
 		static COST_X = 256;
@@ -190,7 +196,8 @@ function Card(_card_id, _name, _description, _cost) constructor
 		}
 		
 		#region Drawing contents of the card.
-		draw_sprite(spr_card_front, get_id(), 0, 0);
+		draw_rectangle_set(2, 2, sprite_get_width(spr_card_front) - 2, sprite_get_height(spr_card_front) - 2, true, c_lime);
+		draw_sprite(spr_card_front, get_id(), CARD_XOFFSET, CARD_YOFFSET);
 		get_name_scribble().draw(NAME_X, NAME_Y);
 		get_description_scribble().draw(DESC_X, DESC_Y);
 		if (get_cost() > 0)
@@ -199,7 +206,10 @@ function Card(_card_id, _name, _description, _cost) constructor
 		}
 		#endregion
 		surface_reset_target();
-		draw_surface(surf, _x, _y);
+		
+		var xx = _x - CARD_XOFFSET/* + lengthdir_x(CARD_XOFFSET, _angle - 90)*/;
+		var yy = _y - CARD_YOFFSET/* + lengthdir_y(CARD_YOFFSET, _angle - 90)*/;
+		draw_surface_ext(surf, xx, yy, 1, 1, _angle, c_white, 1.0);
 	}
 	#endregion
 	
