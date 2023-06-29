@@ -28,6 +28,28 @@ function draw_text_set(_x, _y, _string, _font = fnt_default, _halign = fa_left, 
 	draw_text(_x, _y, _string);
 }
 #endregion
+#region draw_text_set_ext(x, y, string, sep, w, [font], [halign], [valign], [color], [alpha]);
+/// @function draw_text_set_ext
+/// @param x
+/// @param y
+/// @param string
+/// @param sep
+/// @param w
+/// @param [font]
+/// @param [halign]
+/// @param [valign]
+/// @param [color]
+/// @param {Real} [alpha]
+function draw_text_set_ext(_x, _y, _string, _sep, _w, _font = fnt_default, _halign = fa_left, _valign = fa_top, _color = c_white, _alpha = 1.0)
+{
+	draw_set_font(_font);
+	draw_set_halign(_halign);
+	draw_set_valign(_valign);
+	draw_set_color(_color);
+	draw_set_alpha(_alpha);
+	draw_text_ext(_x, _y, _string, _sep, _w);
+}
+#endregion
 #region draw_rectangle_set(x1, y1, x2, y2, outline, [color], [alpha]);
 /// @function draw_rectangle_set
 /// @param x1

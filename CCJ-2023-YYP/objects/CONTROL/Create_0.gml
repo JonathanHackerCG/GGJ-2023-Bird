@@ -46,7 +46,7 @@ function player_phase_start()
 {
 	AUDIO.play("snd_pass_turn_enemy");
 	PLAYER.sap = STARTING_SAP_AMOUNT;
-	player_deck.draw(STARTING_DRAW_AMOUNT);
+	player_deck.draw_cards(STARTING_DRAW_AMOUNT);
 	with (par_enemy) { choose_attack(); }
 	return true;
 }
@@ -55,8 +55,6 @@ function player_phase_start()
 /// @func player_phase_input();
 function player_phase_input()
 {
-	player_deck.draw_input();
-	
 	if (!instance_exists(par_enemy))
 	{
 		exit_combat();
@@ -112,7 +110,7 @@ function exit_combat(_victory)
 {
 	queue.clear();
 	phase_queue.clear();
-	AUDIO.music(msc_exploration);
+	AUDIO.music(msc_exploration1);
 	//layer_set_visible("Collision", true);
 	//with (obj_transition) { visible = true; }
 	

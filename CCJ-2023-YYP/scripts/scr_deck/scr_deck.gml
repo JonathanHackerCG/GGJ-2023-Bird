@@ -62,14 +62,19 @@ function Deck() constructor
 		}
 	}
 	#endregion
-	#region draw(number);
-	/// @function draw
+	#region draw_cards(number);
+	/// @function draw_cards
 	/// @desc Draws a number of cards. Will recycle if necessary.
 	/// @arg	number
-	static draw = function(_number)
+	static draw_cards = function(_number)
 	{
-		AUDIO.play("snd_card_draw");
 		var _hand_size = array_length(_cards_hand);
+		if (_hand_size < MAX_HAND_SIZE)
+		{
+			AUDIO.play("snd_card_draw");
+		}
+		//else { AUDIO.play("snd_unsable"); }
+		
 		repeat(min(_number, MAX_HAND_SIZE - _hand_size))
 		{
 			if (array_length(_cards_library) <= 0)
@@ -159,8 +164,12 @@ function Deck() constructor
 	}
 	#endregion
 	#region draw_input();
+	/// @func draw_input():
+	/// @desc Draw/Input for Deck.
 	static draw_input = function()
 	{
+		static CARD_XOFFSET = sprite_get_xoffset(spr_card_front);
+		static CARD_YOFFSET = sprite_get_yoffset(spr_card_front);
 		static STACK_SPACING = 8;
 		static STACK_HEIGHT = 10;
 		static DRAW_MAX_WIDTH = UI.draw_end_x - UI.draw_x;
@@ -185,28 +194,37 @@ function Deck() constructor
 		var _dis = 144;
 		var _selection = -1;
 		var _selection_offset = 0;
-		if (mouse_y >= UI.draw_y)
+		if (mouse_y >= UI.draw_y - CARD_YOFFSET)
 		{
 			for (var i = 0; i < _hand_size; i++)
 			{
 				var _offset = i * min(DRAW_MAX_SPACING, DRAW_MAX_WIDTH / _hand_size);
 				var _xpos = UI.draw_x + _offset + 144;
-				if (abs(mouse_x - _xpos) < _dis)
+				if (abs(mouse_x + CARD_XOFFSET - _xpos) < _dis)
 				{
 					_selection = i;
 					_selection_offset = _offset;
-					_dis = abs(mouse_x - _xpos);
+					_dis = abs(mouse_x + CARD_XOFFSET - _xpos);
 				}
 			}
 		}
 		#endregion
 		#region Drawing player's hand.
+		if (DEBUG && keyboard_check_pressed(ord("D")))
+		{
+			draw_cards(1);
+		}
+		
 		for (var i = 0; i < _hand_size; i++)
 		{
 			var _offset = i * min(DRAW_MAX_SPACING, DRAW_MAX_WIDTH / _hand_size);
 			if (i != _selection)
 			{
-				_cards_hand[i]._draw_input(UI.draw_x + _offset, UI.draw_y, false);
+				var _dir = (i - ((_hand_size - 1) / 2)) * -(30 / _hand_size);
+				var _len = 1280;
+				var xx = UI.draw_x + _offset;
+				var yy = UI.draw_y + lengthdir_y(_len,  90 + _dir) + _len;
+				_cards_hand[i]._draw_input(xx, yy, false, _dir);
 			}
 		}
 		if (_selection != -1)
@@ -244,7 +262,7 @@ function Deck() constructor
 		for (var i = 0; i < _size; i++)
 		{
 			var _card = _array[i];
-			_out += _card.get_name();
+			_out += _card.get_name_string();
 			if (i != _size - 1) { _out += ", "; }
 		}
 		_out += "]";

@@ -39,11 +39,18 @@ function Card(_card_id, _name, _description, _cost) constructor
 	#endregion
 	set_id(_card_id);
 	
-	#region get_name();
-	/// @func get_name():
-	static get_name = function()
+	#region get_name_string();
+	/// @func get_name_string():
+	static get_name_string = function()
 	{
 		return _name;
+	}
+	#endregion
+	#region get_name_scribble();
+	/// @func get_name_scribble():
+	static get_name_scribble = function()
+	{
+		return _name_scribble;
 	}
 	#endregion
 	#region set_name(_name);
@@ -51,16 +58,28 @@ function Card(_card_id, _name, _description, _cost) constructor
 	static set_name = function(_name)
 	{
 		self._name = _name;
+		self._name_scribble = scribble(_name)
+			.starting_format(FONT_NAME, c_black)
+			.align(fa_left, fa_middle);
 		return self;
 	}
 	#endregion
 	set_name(_name);
 	
-	#region get_description();
-	/// @func get_description():
-	static get_description = function()
+	#region get_description_string();
+	/// @func get_description_string():
+	/// @desc	Returns the card description as a string.
+	static get_description_string = function()
 	{
 		return _description;
+	}
+	#endregion
+	#region get_description_scribble();
+	/// @func get_description_scribble():
+	/// @desc	Returns the card description as a Scribble class.
+	static get_description_scribble = function()
+	{
+		return _description_scribble;
 	}
 	#endregion
 	#region set_description(_description);
@@ -68,6 +87,10 @@ function Card(_card_id, _name, _description, _cost) constructor
 	static set_description = function(_description)
 	{
 		self._description = _description;
+		self._description_scribble = scribble(_description)
+			.starting_format(FONT_DESCRIPTION, c_black)
+			.align(fa_left, fa_top)
+			.wrap(230);
 		return self;
 	}
 	#endregion
@@ -121,16 +144,47 @@ function Card(_card_id, _name, _description, _cost) constructor
 		}
 	}
 	#endregion
+	
+	surf = undefined;
+	#region _update_surface();
+	/// @func _update_surface();
+	/// @desc	Internal method to update the card drawing surface.
+	static _update_surface = function()
+	{
+		if (surf == undefined || !surface_exists(surf))
+		{
+			surf = surface_create(sprite_get_width(spr_card_front), sprite_get_height(spr_card_front));
+		}
+	}
+	#endregion
 	#region _draw_input(x, y);
 	/// @func _draw_input(x, y, selected);
 	/// @desc Internal draw method called by Deck.
-	static _draw_input = function(_x, _y, _selected)
+	/// @arg	x
+	/// @arg	y
+	/// @arg	[selected]
+	/// @arg	[angle]
+	static _draw_input = function(_x, _y, _selected = false, _angle = 0)
 	{
 		static SELECTED_OFFSET = 32;
+		static CARD_XOFFSET = sprite_get_xoffset(spr_card_front);
+		static CARD_YOFFSET = sprite_get_yoffset(spr_card_front);
+		static NAME_X = 64;
+		static NAME_Y = 96;
+		static COST_X = 256;
+		static COST_Y = 72;
+		static DESC_X = 68;
+		static DESC_Y = 384;
+		
+		_update_surface();
+		surface_set_target(surf);
+		draw_clear_alpha(c_white, 0.0);
 		if (_selected)
 		{
 			_y -= SELECTED_OFFSET;
-			draw_sprite_animated(spr_card_shimmer, _x, _y);
+			draw_sprite_animated(spr_card_shimmer, 0, 0);
+			
+			#region Playing the card (input).
 			if (input_check_pressed("confirm") && PLAYER.sap >= get_cost())
 			{
 				input_consume("confirm");
@@ -138,17 +192,23 @@ function Card(_card_id, _name, _description, _cost) constructor
 				play();
 				CONTROL.player_deck.discard(self);
 			}
+			#endregion
 		}
 		
-		draw_sprite(spr_card_front, get_id(), _x, _y);
-		draw_text_set(_x + 32, _y + 48, get_name(), fnt_card_name, fa_left, fa_center, c_black);
-		draw_text_set(_x + 224, _y + 16, string(get_cost()), fnt_card_number, fa_center, fa_center, c_white);
+		#region Drawing contents of the card.
+		draw_sprite(spr_card_front, get_id(), CARD_XOFFSET, CARD_YOFFSET);
+		get_name_scribble().draw(NAME_X, NAME_Y);
+		get_description_scribble().draw(DESC_X, DESC_Y);
+		if (get_cost() > 0)
+		{
+			draw_text_set(COST_X, COST_Y, string(get_cost()), fnt_card_number, fa_center, fa_center, c_white);
+		}
+		#endregion
+		surface_reset_target();
 		
-		draw_set_font(fnt_card_description);
-		draw_set_color(c_black);
-		draw_set_halign(fa_left);
-		draw_set_valign(fa_top);
-		draw_text_ext(_x + 32, _y + 340, get_description(), 20, 230);
+		var xx = _x - CARD_XOFFSET;
+		var yy = _y - CARD_YOFFSET;
+		draw_surface_rotated_ext(surf, xx, yy, 1, 1, _angle, c_white, 1.0);
 	}
 	#endregion
 	
@@ -157,7 +217,7 @@ function Card(_card_id, _name, _description, _cost) constructor
 	/// @desc Returns a deep copy of the Card.
 	static copy = function()
 	{
-		var _card = new Card(get_id(), get_name(), get_description(), get_cost());
+		var _card = new Card(get_id(), get_name_string(), get_description_string(), get_cost());
 		array_copy(_card._functions, 0, _functions, 0, array_length(_functions));
 		array_copy(_card._parameters, 0, _parameters, 0, array_length(_parameters));
 		return _card;
