@@ -175,6 +175,15 @@ function Deck() constructor
 		static DRAW_MAX_WIDTH = UI.draw_end_x - UI.draw_x;
 		static DRAW_MAX_SPACING = 256;
 		
+		#region Health and sap.
+		var xx = UI.health_x;
+		var yy = UI.health_y;
+		var hp_scale = PLAYER.hp / PLAYER.hp_max;
+		draw_sprite(spr_ui_health, 1, xx, yy);
+		draw_sprite_ext(spr_ui_health, 2, xx, yy, 1, hp_scale, 0, c_white, 1.0);
+		draw_sprite(spr_ui_health, 3, xx, yy);
+		draw_text_set(xx - 4, yy - 34, string(PLAYER.hp),fnt_card_description,fa_center);
+		#endregion
 		#region Card piles.
 		var count = 0;
 		repeat(min(STACK_HEIGHT, array_length(_cards_library)))
