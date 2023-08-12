@@ -16,8 +16,8 @@
   "isDnd": false,
   "layers": [
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Collision","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":27,"SerialiseWidth":48,"TileCompressedData":[
--16,1,-12,0,-36,1,-12,0,-36,1,-12,0,-36,1,-12,0,-36,1,-12,0,-36,1,-12,0,-33,1,-15,0,-33,1,-15,0,-33,1,-15,0,-33,1,-15,0,-33,1,-15,0,-33,1,-16,0,
--32,1,-16,0,-32,1,-16,0,-32,1,-16,0,-32,1,-16,0,-32,1,-15,0,-34,1,-14,0,-35,1,-13,0,-35,1,-12,0,-37,1,-10,0,-310,1,],"TileDataFormat":1,},"tilesetId":{"name":"tst_collision","path":"tilesets/tst_collision/tst_collision.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
+-16,1,-12,0,-36,1,-12,0,-36,1,-12,0,-36,1,-12,0,-36,1,-12,0,-36,1,-12,0,-33,1,-15,0,-33,1,-15,0,-33,1,-15,0,-33,1,-15,0,-33,1,-7,0,-41,1,-6,0,
+-42,1,-6,0,-42,1,-6,0,-42,1,-7,0,-41,1,-10,0,-38,1,-12,0,-37,1,-14,0,-35,1,-13,0,-35,1,-12,0,-37,1,-10,0,-310,1,],"TileDataFormat":1,},"tilesetId":{"name":"tst_collision","path":"tilesets/tst_collision/tst_collision.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":27,"SerialiseWidth":48,"TileCompressedData":[
 -7,696,5,676,677,678,679,680,-13,-2147483648,8,992,993,994,995,-2147483648,-2147483648,888,888,-22,696,5,740,741,742,743,744,-13,-2147483648,4,1056,1057,1058,1059,-3,-2147483648,-2,888,-21,696,5,804,805,806,807,808,-13,-2147483648,
 12,1120,1121,1122,1123,1309,1310,1311,1312,1313,1314,1315,1316,-18,696,5,868,869,870,871,872,-13,-2147483648,12,1184,1185,1186,1187,1373,1374,1375,1376,1377,1378,1379,1380,-18,696,5,932,933,934,935,936,-17,-2147483648,8,1437,
