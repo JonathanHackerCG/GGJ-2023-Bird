@@ -294,6 +294,7 @@
     {"name":"rm_3_2","order":1,"path":"rooms/rm_3_2/rm_3_2.yy",},
     {"name":"obj_Beetle_Small","order":4,"path":"objects/obj_Beetle_Small/obj_Beetle_Small.yy",},
     {"name":"input_binding_scan_in_progress","order":10,"path":"scripts/input_binding_scan_in_progress/input_binding_scan_in_progress.yy",},
+    {"name":"obj_ui_sap","order":5,"path":"objects/obj_ui_sap/obj_ui_sap.yy",},
     {"name":"input_player_get_gamepad","order":5,"path":"scripts/input_player_get_gamepad/input_player_get_gamepad.yy",},
     {"name":"rm_1_3","order":2,"path":"rooms/rm_1_3/rm_1_3.yy",},
     {"name":"__input_gamepad_reset_color","order":10,"path":"scripts/__input_gamepad_reset_color/__input_gamepad_reset_color.yy",},

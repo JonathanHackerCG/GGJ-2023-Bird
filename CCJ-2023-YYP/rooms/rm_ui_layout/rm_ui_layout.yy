@@ -13,6 +13,7 @@
     {"name":"inst_79A671F9","path":"rooms/rm_ui_layout/rm_ui_layout.yy",},
     {"name":"inst_4DF8F4D4","path":"rooms/rm_ui_layout/rm_ui_layout.yy",},
     {"name":"inst_5F31E8EE","path":"rooms/rm_ui_layout/rm_ui_layout.yy",},
+    {"name":"inst_61D9595B","path":"rooms/rm_ui_layout/rm_ui_layout.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -35,6 +36,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5F31E8EE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_ui_health","path":"objects/obj_ui_health/obj_ui_health.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"par_ui","path":"objects/par_ui/par_ui.yy",},"propertyId":{"name":"reference","path":"objects/par_ui/par_ui.yy",},"value":"health",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":120.0,"y":1000.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_61D9595B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_ui_sap","path":"objects/obj_ui_sap/obj_ui_sap.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":1000.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

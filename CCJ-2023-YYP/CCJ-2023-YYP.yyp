@@ -89,7 +89,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.4.0.84",
+    "IDEVersion": "2023.6.0.89",
   },
   "resources": [
     {"id":{"name":"__scribble_get_krutidev_matra_lookup_map","path":"scripts/__scribble_get_krutidev_matra_lookup_map/__scribble_get_krutidev_matra_lookup_map.yy",},},
@@ -348,6 +348,7 @@
     {"id":{"name":"rm_3_2","path":"rooms/rm_3_2/rm_3_2.yy",},},
     {"id":{"name":"obj_Beetle_Small","path":"objects/obj_Beetle_Small/obj_Beetle_Small.yy",},},
     {"id":{"name":"input_binding_scan_in_progress","path":"scripts/input_binding_scan_in_progress/input_binding_scan_in_progress.yy",},},
+    {"id":{"name":"obj_ui_sap","path":"objects/obj_ui_sap/obj_ui_sap.yy",},},
     {"id":{"name":"input_player_get_gamepad","path":"scripts/input_player_get_gamepad/input_player_get_gamepad.yy",},},
     {"id":{"name":"rm_1_3","path":"rooms/rm_1_3/rm_1_3.yy",},},
     {"id":{"name":"__input_gamepad_reset_color","path":"scripts/__input_gamepad_reset_color/__input_gamepad_reset_color.yy",},},
