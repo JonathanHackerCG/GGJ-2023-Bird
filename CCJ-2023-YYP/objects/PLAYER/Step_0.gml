@@ -4,18 +4,25 @@ event_inherited();
 if (CONTROL.in_combat) { exit; }
 
 //Movement/Pathfinding
-if (input_check_pressed("move"))
+if (input_check_pressed("move") && !DEBUG_USING_MOUSE)
 {
 	gox = clamp(mouse_x, CELLSIZE, room_width - CELLSIZE);
 	goy = clamp(mouse_y, CELLSIZE, room_height - CELLSIZE);
 	var _dir = point_direction(gox, goy, x, y);
-	while (mp_grid_get_cell(CONTROL.collision, gox / CELLSIZE, goy / CELLSIZE) == -1)
+	while (mp_grid_get_cell(CONTROL.collision, gox / CELLSIZE, goy / CELLSIZE) == -1
+		&& point_in_rectangle(gox, goy, 0, 0, room_width, room_height))
 	{
 		//Correcting path when input is out of bounds.
-		gox += lengthdir_x(CELLSIZE, _dir);
-		goy += lengthdir_y(CELLSIZE, _dir);
+		gox += lengthdir_x(CELLSIZE / 2, _dir);
+		goy += lengthdir_y(CELLSIZE / 2, _dir);
 	}
-	mp_grid_path(CONTROL.collision, path, x, y, gox, goy, true);
+	if (!mp_grid_path(CONTROL.collision, path, x, y, gox, goy, true))
+	{
+		//Fallback pathfinding (could not find a path).
+		gox = mouse_x;
+		goy = mouse_y;
+		mp_linear_path(path, gox, goy, CELLSIZE / 2, false);
+	}
 	path_start(path, move_speed, path_action_stop, true);
 }
 
