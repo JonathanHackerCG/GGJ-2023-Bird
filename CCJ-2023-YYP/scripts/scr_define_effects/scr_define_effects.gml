@@ -10,10 +10,19 @@ function target_self()
 	return true;
 }
 #endregion
-#region target_enemy_strongest();
-/// @func target_enemy_strongest():
-/// @desc Targets the enemy with the highest HP.
-function target_enemy_strongest()
+#region target_selection();
+/// @func target_selection
+/// @desc Targets the currently selected enemy.
+function target_selection()
+{
+	CONTROL.targets = [CONTROL.selected_enemy];
+	return true;
+}
+#endregion
+#region select_enemy_strongest();
+/// @func select_enemy_strongest():
+/// @desc Selects the enemy with the highest HP.
+function select_enemy_strongest()
 {
 	var _temp = [];
 	array_copy(_temp, 0, CONTROL.enemies, 0, instance_number(par_enemy));
@@ -31,14 +40,14 @@ function target_enemy_strongest()
 			_hp = _choice.hp;
 		}
 	}
-	CONTROL.targets = [_choice];
+	CONTROL.select_enemy(_choice);
 	return true;
 }
 #endregion
-#region target_enemy_weakest();
-/// @func target_enemy_weakest():
-/// @desc Targets the enemy with the lowest HP.
-function target_enemy_weakest()
+#region select_enemy_weakest();
+/// @func select_enemy_weakest():
+/// @desc Selects the enemy with the lowest HP.
+function select_enemy_weakest()
 {
 	var _temp = [];
 	array_copy(_temp, 0, CONTROL.enemies, 0, instance_number(par_enemy));
@@ -56,7 +65,7 @@ function target_enemy_weakest()
 			_hp = _choice.hp;
 		}
 	}
-	CONTROL.targets = [_choice];
+	CONTROL.select_enemy(_choice);
 	return true;
 }
 #endregion
@@ -250,17 +259,28 @@ function attack_heal_ally(_amount)
 function take_damage(_amount)
 {
 	hp -= _amount;
-	if (object_index == PLAYER) { AUDIO.play("snd_bird_hurt"); }
-	else { AUDIO.play("snd_player_attack"); }
+	if (object_index == PLAYER)
+	{
+		//PLAYER DAMAGE
+		AUDIO.play("snd_bird_hurt");
+	}
+	else
+	{
+		//ENEMY DAMAGE
+		AUDIO.play("snd_player_attack");
+		CONTROL.select_next_enemy();
+	}
 	
 	if (hp <= 0)
 	{
 		if (object_index == PLAYER)
 		{
+			//PLAYER DEATH
 			hp = hp_max;
 		}
 		else
 		{
+			//ENEMY DEATH
 			var myid = id;
 			with (CONTROL)
 			{

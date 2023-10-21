@@ -53,6 +53,18 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 						}
 					}
 				}
+				if (ImGui.BeginMenu("Extra")) {
+					for (var i = 0; i < _rooms_count_ext; i++) {
+						var _name = _rooms_ext[i];
+						if (ImGui.MenuItem(_name)) {
+							room_goto(asset_get_index(_name));
+							if (!instance_exists(PLAYER))
+							{
+								instance_create_layer(room_width / 2, room_height / 2, "Instances", PLAYER);
+							}
+						}
+					}
+				ImGui.EndMenu(); }
 			ImGui.EndMenu(); }
 			#endregion
 			MyMenuItem("Restart", "Ctrl+R", room_restart);

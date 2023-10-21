@@ -11,6 +11,8 @@ player_deck = new Deck();
 queue = new FunctionQueue();
 targets = [];
 enemies = [];
+selected_index = -1;
+selected_enemy = noone;
 in_combat = false;
 
 alarm[0] = 1; //Start Room
@@ -34,6 +36,8 @@ function start_combat()
 	{
 		return a.x > b.x;
 	});
+	selected_index = -1;
+	select_next_enemy();
 	
 	player_deck.start();
 	in_combat = true;
@@ -101,6 +105,24 @@ function phase_restart()
 	phase_queue.insert_append(enemy_phase_update);
 	phase_queue.insert_append(phase_restart);
 	return true;
+}
+#endregion
+#region select_enemy(id);
+function select_enemy(_id)
+{
+	selected_enemy = _id;
+	selected_index = array_find_index(enemies, function(_element, _index)
+	{
+		return (_element == selected_enemy);
+	});
+}
+#endregion
+#region select_next_enemy();
+function select_next_enemy()
+{
+	selected_index ++;
+	selected_index = wrap(selected_index, 0, array_length(enemies));
+	selected_enemy = enemies[selected_index];
 }
 #endregion
 #region exit_combat(victory);
