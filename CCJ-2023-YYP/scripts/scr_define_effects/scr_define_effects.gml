@@ -258,6 +258,10 @@ function attack_heal_ally(_amount)
 /// @arg	amount
 function take_damage(_amount)
 {
+	//TODO: Armor
+	//Also remember to add effect_* functions for Armor.
+	//var _total = _amount - armor;
+	
 	hp -= _amount;
 	if (object_index == PLAYER)
 	{

@@ -3,6 +3,7 @@ event_inherited();
 
 hp = 1;
 hp_max = hp;
+armor = 0;
 attack_options = [];
 attack_parameters = [];
 attack_intents = [];
