@@ -10,7 +10,9 @@ function toggle_menu()
 #endregion
 #region Get Rooms
 _rooms = [];
+_rooms_ext = [];
 _rooms_count = 0;
+_rooms_count_ext = 0;
 var i = 0;
 while (room_exists(i)) {
 	switch (i)
@@ -24,6 +26,12 @@ while (room_exists(i)) {
 		{
 			i++;
 		} break;
+		//Add some rooms to the special list (debug rooms).
+		case rm_combat_test:
+		{
+			var _name = room_get_name(i);
+			array_push(_rooms_ext, _name);
+		} break;
 		default:
 		{
 			var _name = room_get_name(i);
@@ -34,6 +42,7 @@ while (room_exists(i)) {
 }
 array_sort(_rooms, true);
 _rooms_count = array_length(_rooms);
+_rooms_count_ext = array_length(_rooms_ext);
 #endregion
 
 #region MyMenuItem(name, desc, callback);

@@ -1,6 +1,6 @@
 enum card
 {
-	//Remember: Import a new frame for spar_card_front for each of these IDs, in the same order.
+	//Remember: Import a new frame for spr_card_front for each of these IDs, in the same order.
 	none, //First Entry
 	cardA,
 	cardB,
@@ -45,13 +45,13 @@ create_card(card.Rock, "", "15-30 Attack to Random Enemy \n -10 to 15 Health", 0
 
 #region Beetle Cards
 create_card(card.Beetle_Small_1, "Beetle", "4 Attack to Random Enemy \n +1 Health", 1)
-	.add_effect(target_enemy_random, 1) // Change to random enemy
-	.add_effect(effect_damage, 4)
-	.add_effect(target_self)
-	.add_effect(effect_heal, 1);
+	.add_effect(select_enemy_strongest)
+	.add_effect(target_selection)
+	.add_effect(effect_damage, 5);
 	
 create_card(card.Beetle_Small_2, "Beetle", "3 Attack to Weakest Enemy \n +1 Health", 1)
-	.add_effect(target_enemy_weakest) // Change to lowest health
+	//.add_effect(select_enemy_weakest) // Change to lowest health
+	.add_effect(target_selection)
 	.add_effect(effect_damage, 3)
 	.add_effect(target_self)
 	.add_effect(effect_heal, 1);
@@ -72,7 +72,7 @@ create_card(card.Fungi_Small_1, "Fungi", "4 Attack to Random Enemy \n +1 Health"
 	.add_effect(effect_heal, 1);
 	
 create_card(card.Fungi_Small_2, "Fungi", "3 Attack to Weakest Enemy \n +1 Sap", 2)
-	.add_effect(target_enemy_weakest) // Change to lowest health
+	.add_effect(select_enemy_weakest) // Change to lowest health
 	.add_effect(effect_damage, 3)
 	.add_effect(target_self) // Change to lowest damage
 	.add_effect(effect_sap, 1);
