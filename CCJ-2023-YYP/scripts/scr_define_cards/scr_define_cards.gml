@@ -32,9 +32,10 @@ create_card(card.SapAdder, "", "", 0)
 	.add_effect(target_self)
 	.add_effect(effect_sap_range, 1, 2);
 	
-create_card(card.Heal, "", "", 0)
+create_card(card.Heal, "", "3-5 Heal\n3-5 Armor", 0)
 	.add_effect(target_self)
-	.add_effect(effect_heal_range, 3, 5);
+	.add_effect(effect_heal_range, 3, 5)
+	.add_effect(effect_armor_range, 3, 5);
 	
 create_card(card.Rock, "", "15-30 Attack to Random Enemy \n -10 to 15 Health", 0)
 	.add_effect(target_self)
@@ -44,13 +45,12 @@ create_card(card.Rock, "", "15-30 Attack to Random Enemy \n -10 to 15 Health", 0
 #endregion
 
 #region Beetle Cards
-create_card(card.Beetle_Small_1, "Beetle", "4 Attack to Random Enemy \n +1 Health", 1)
-	.add_effect(select_enemy_strongest)
+create_card(card.Beetle_Small_1, "Beetle", "3 Attack to Selected Enemy", 1)
 	.add_effect(target_selection)
-	.add_effect(effect_damage, 5);
+	.add_effect(effect_damage, 3);
 	
 create_card(card.Beetle_Small_2, "Beetle", "3 Attack to Weakest Enemy \n +1 Health", 1)
-	//.add_effect(select_enemy_weakest) // Change to lowest health
+	.add_effect(select_enemy_weakest)
 	.add_effect(target_selection)
 	.add_effect(effect_damage, 3)
 	.add_effect(target_self)
