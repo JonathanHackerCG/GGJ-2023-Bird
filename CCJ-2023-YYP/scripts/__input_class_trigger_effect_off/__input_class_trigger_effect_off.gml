@@ -1,3 +1,4 @@
+//Feather ignore all
 function __input_class_trigger_effect_off() constructor
 {
     static __mode_name = "off";

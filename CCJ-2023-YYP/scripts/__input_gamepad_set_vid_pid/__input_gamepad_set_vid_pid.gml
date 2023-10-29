@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// This function should be called in the scope of a gamepad class
 
 function __input_gamepad_set_vid_pid()

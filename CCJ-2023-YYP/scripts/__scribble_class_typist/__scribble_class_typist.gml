@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __scribble_class_typist() constructor
 {
     static __scribble_state = __scribble_get_state();

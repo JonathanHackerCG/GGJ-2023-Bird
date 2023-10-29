@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @desc    Returns the icon defined in __input_config_icons() for the given binding, taking into account the player's currently assigned source(s)
 /// @param   binding
 /// @param   [playerIndex=0]

@@ -1,3 +1,4 @@
+//Feather ignore all
 function __input_class_combo_state(_name, _combo_definition_struct) constructor
 {
     __name = _name;

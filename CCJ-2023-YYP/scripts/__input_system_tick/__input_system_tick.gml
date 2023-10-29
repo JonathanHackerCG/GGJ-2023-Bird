@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_system_tick()
 {
     global.__input_frame++;

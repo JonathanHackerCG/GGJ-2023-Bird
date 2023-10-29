@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_class_chord_state(_name, _chord_definition_struct) constructor
 {
     __name = _name;

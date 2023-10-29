@@ -50,6 +50,7 @@ function player_phase_start()
 {
 	AUDIO.play("snd_pass_turn_enemy");
 	PLAYER.sap = STARTING_SAP_AMOUNT;
+	PLAYER.armor = 0;
 	player_deck.draw_cards(STARTING_DRAW_AMOUNT);
 	with (par_enemy) { choose_attack(); }
 	return true;
@@ -75,6 +76,7 @@ function player_phase_end()
 {
 	AUDIO.play("snd_pass_turn");
 	player_deck.discard_hand();
+	with (par_enemy) { armor = 0; }
 	return true;
 }
 #endregion

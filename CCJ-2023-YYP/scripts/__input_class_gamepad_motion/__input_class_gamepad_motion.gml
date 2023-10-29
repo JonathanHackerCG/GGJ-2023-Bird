@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_class_gamepad_motion(_gamepad_index) constructor
 {
     static __motion_data = {};

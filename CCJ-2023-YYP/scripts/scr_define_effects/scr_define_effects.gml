@@ -131,7 +131,7 @@ function effect_damage_range(_minimum, _maximum)
 #endregion
 #region effect_heal(amount);
 /// @func effect_heal();
-/// @desc Deal a set amount of heal.
+/// @desc Apply a set amount of heal.
 /// @arg	amount
 function effect_heal(_amount)
 {
@@ -144,7 +144,7 @@ function effect_heal(_amount)
 #endregion
 #region effect_heal_range(min, max);
 /// @func effect_heal_range(minimum, maximum);
-/// @desc Deal a random amount of heal in a range.
+/// @desc Apply a random amount of heal in a range.
 /// @arg	minimum
 /// @arg maximum
 function effect_heal_range(_minimum, _maximum)
@@ -153,6 +153,34 @@ function effect_heal_range(_minimum, _maximum)
 	{
 		var _amount = irandom_range(_minimum, _maximum);
 		heal(_amount);
+	}, [_minimum, _maximum]);
+	return true;
+}
+#endregion
+#region effect_armor(amount);
+/// @func effect_armor();
+/// @desc Apply a set amount of armor.
+/// @arg	amount
+function effect_armor(_amount)
+{
+	_with_targets(function(_amount)
+	{
+		gain_armor(_amount);
+	}, [_amount]);
+	return true;
+}
+#endregion
+#region effect_armor_range(min, max);
+/// @func effect_armor_range(minimum, maximum);
+/// @desc Apply a random amount of armor in a range.
+/// @arg	minimum
+/// @arg maximum
+function effect_armor_range(_minimum, _maximum)
+{
+	_with_targets(function(_minimum, _maximum)
+	{
+		var _amount = irandom_range(_minimum, _maximum);
+		gain_armor(_amount);
 	}, [_minimum, _maximum]);
 	return true;
 }
@@ -239,7 +267,7 @@ function attack_heal_self(_amount)
 	return true;
 }
 #endregion
-#region attack_heal_ally(_amount)
+#region attack_heal_ally(_amount);
 /// @func attack_heal_ally
 /// @desc Heals a random ally for an amount.
 /// @arg	amount
@@ -251,6 +279,30 @@ function attack_heal_ally(_amount)
 	return true;
 }
 #endregion
+#region attack_armor_self(_amount);
+/// @func attack_armor_self
+/// @desc armors the enemy for an amount.
+/// @arg	amount
+function attack_armor_self(_amount)
+{
+	AUDIO.play("snd_enemy_heal");
+	CONTROL.targets = [id];
+	effect_armor(_amount);
+	return true;
+}
+#endregion
+#region attack_armor_ally(_amount);
+/// @func attack_armor_ally
+/// @desc armors a random ally for an amount.
+/// @arg	amount
+function attack_armor_ally(_amount)
+{
+	AUDIO.play("snd_enemy_heal");
+	CONTROL.targets = [instance_find(par_enemy, irandom(instance_number(par_enemy) - 1))];
+	effect_armor(_amount);
+	return true;
+}
+#endregion
 
 //Damage handling.
 #region take_damage(amount);
@@ -258,7 +310,11 @@ function attack_heal_ally(_amount)
 /// @arg	amount
 function take_damage(_amount)
 {
-	hp -= _amount;
+	var _total = max(0, _amount - armor);
+	
+	hp		-= _total;
+	armor -= _amount - _total;
+	
 	if (object_index == PLAYER)
 	{
 		//PLAYER DAMAGE
@@ -317,6 +373,14 @@ function gain_sap(_amount)
 {
 	sap += _amount;
 	sap = clamp(sap, 0, sap_max);
+}
+#endregion
+#region gain_armor(amount);
+/// @func gain_armor
+/// @arg	amount
+function gain_armor(_amount)
+{
+	armor += _amount;
 }
 #endregion
 

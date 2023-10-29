@@ -1,3 +1,5 @@
+//Feather ignore all
+
 #macro INPUT_DEFAULT_PROFILES __input_initialize(); for(var _i = 0; _i < 2; _i++) if (_i == 1) __input_finalize_default_profiles() else if (is_struct(global.__input_default_profile_dict)) break else global.__input_default_profile_dict
 
 function __input_finalize_default_profiles()

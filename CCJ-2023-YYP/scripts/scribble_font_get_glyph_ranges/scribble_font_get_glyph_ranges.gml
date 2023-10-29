@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @param fontName
 /// @param [hex=false]
 

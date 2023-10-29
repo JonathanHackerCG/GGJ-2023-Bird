@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @desc    Returns the human-readable name of the virtual button/axis constant
 /// @param   GMconstant
 

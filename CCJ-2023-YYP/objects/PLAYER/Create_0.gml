@@ -14,6 +14,7 @@ hp = 100;
 hp_max = 100;
 sap = 3;
 sap_max = 9;
+armor = 0;
 
 //Pathfinding
 gox = x;

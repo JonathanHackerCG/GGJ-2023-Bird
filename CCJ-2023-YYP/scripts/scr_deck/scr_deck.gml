@@ -231,8 +231,8 @@ function Deck() constructor
 			{
 				var _dir = (i - ((_hand_size - 1) / 2)) * -(30 / _hand_size);
 				var _len = 1280;
-				var xx = UI.draw_x + _offset;
-				var yy = UI.draw_y + lengthdir_y(_len,  90 + _dir) + _len;
+				xx = UI.draw_x + _offset;
+				yy = UI.draw_y + lengthdir_y(_len,  90 + _dir) + _len;
 				_cards_hand[i]._draw_input(xx, yy, false, _dir);
 			}
 		}
@@ -291,17 +291,17 @@ function Deck() constructor
 	}
 	#endregion
 	
-	//gain_card(card.Heal);
-	//gain_card(card.Heal);
-	//gain_card(card.Heal);
-	//gain_card(card.Heal);
+	gain_card(card.Heal);
+	gain_card(card.Heal);
+	gain_card(card.Heal);
+	gain_card(card.Heal);
 	gain_card(card.Beetle_Small_1);
 	gain_card(card.Beetle_Small_1);
 	gain_card(card.Beetle_Small_1);
 	gain_card(card.Beetle_Small_1);
 	gain_card(card.Beetle_Small_1);
-	//gain_card(card.Beetle_Small_2);
-	//gain_card(card.Beetle_Small_2);
-	//gain_card(card.Beetle_Small_2);
+	gain_card(card.Beetle_Small_2);
+	gain_card(card.Beetle_Small_2);
+	gain_card(card.Beetle_Small_2);
 	//gain_card(card.Rock);
 }
