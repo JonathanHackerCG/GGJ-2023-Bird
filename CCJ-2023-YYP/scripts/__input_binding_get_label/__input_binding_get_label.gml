@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_binding_get_label(_type, _value, _axis_negative)
 {
     if (__INPUT_TOUCH_SUPPORT && (os_type != os_windows))

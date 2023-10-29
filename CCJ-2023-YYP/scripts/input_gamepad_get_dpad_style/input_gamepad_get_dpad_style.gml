@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @desc    Returns the style of the given gamepad (after SDL remapping)
 /// @param   gamepadIndex
 

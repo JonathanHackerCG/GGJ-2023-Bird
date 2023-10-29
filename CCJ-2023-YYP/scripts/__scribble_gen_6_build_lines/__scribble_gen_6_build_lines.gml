@@ -1,3 +1,5 @@
+//Feather ignore all
+
 #macro __SCRIBBLE_GEN_LINE_START  _line_grid[# _line_count, __SCRIBBLE_GEN_LINE.__WORD_START        ] = _line_word_start;\
                                   _line_grid[# _line_count, __SCRIBBLE_GEN_LINE.__HALIGN            ] = _state_halign;\
                                   _line_grid[# _line_count, __SCRIBBLE_GEN_LINE.__STARTS_MANUAL_PAGE] = false;\

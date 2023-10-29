@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @desc    Returns the vector represented by the sum of the verb values
 /// @param   leftVerb
 /// @param   rightVerb

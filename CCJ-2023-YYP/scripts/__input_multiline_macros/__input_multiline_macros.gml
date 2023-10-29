@@ -1,3 +1,5 @@
+//Feather ignore all
+
 #macro __INPUT_VERIFY_PLAYER_INDEX  if (_player_index < 0)\
                                     {\
                                         __input_error("Invalid player index provided (", _player_index, ")");\

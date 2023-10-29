@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @return JSON string that encodes the struct/array nested data
 /// 
 /// @param struct/array          The data to be encoded. Can contain structs, arrays, strings, and numbers.   N.B. Will not encode ds_list, ds_map etc.

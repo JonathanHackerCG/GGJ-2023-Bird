@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_keyboard_key()
 {
     if (global.__input_keyboard_allowed && (keyboard_check(vk_anykey)))

@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_multiplayer_assignment_tick()
 {
     if ((INPUT_MULTIPLAYER_LEAVE_VERB != undefined) && !variable_struct_exists(global.__input_basic_verb_dict, INPUT_MULTIPLAYER_LEAVE_VERB))

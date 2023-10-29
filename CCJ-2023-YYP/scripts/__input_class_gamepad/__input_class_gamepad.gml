@@ -1,3 +1,4 @@
+//Feather ignore all
 /// @param index
 function __input_class_gamepad(_index) constructor
 {

@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __scribble_get_krutidev_lookup_map()
 {
     static _map = ds_map_create();

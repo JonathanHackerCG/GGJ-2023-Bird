@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_class_player() constructor
 {
     __index = undefined;

@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function ImGui() constructor {
 	/// @section Binds
 	/// @function CreateContext()

@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_player_tick_sources()
 {
     if (__profile_name == undefined) return;

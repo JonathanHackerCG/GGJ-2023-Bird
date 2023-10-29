@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @desc    Returns the sign of the result of the negative and positive active verbs
 /// @param   verbNegative
 /// @param   verbPositive

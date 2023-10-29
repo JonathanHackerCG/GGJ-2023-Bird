@@ -1,3 +1,5 @@
+//Feather ignore all
+
 function __input_class_binding() constructor
 {
     __set_empty();

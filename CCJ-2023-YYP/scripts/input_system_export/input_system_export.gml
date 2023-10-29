@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @desc    Outputs a string or struct containing all player and accessibility data
 /// @param   [outputString=true]
 /// @param   [prettify=false]

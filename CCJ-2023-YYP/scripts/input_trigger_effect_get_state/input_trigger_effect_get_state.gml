@@ -1,3 +1,5 @@
+//Feather ignore all
+
 /// @desc    Gets gamepad trigger effect state for a player
 /// @param   trigger
 /// @param   [playerIndex=0]
