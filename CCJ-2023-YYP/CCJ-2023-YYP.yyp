@@ -14,6 +14,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"_Libraries","folderPath":"folders/_Libraries.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CG_Modules","folderPath":"folders/_Libraries/CG_Modules.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ImGui_GM - Mine","folderPath":"folders/_Libraries/ImGui_GM - Mine.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ImGui_GM","folderPath":"folders/_Libraries/ImGui_GM.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Input","folderPath":"folders/_Libraries/Input.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"(System)","folderPath":"folders/_Libraries/Input/(System).yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Classes","folderPath":"folders/_Libraries/Input/(System)/Classes.yy",},
@@ -80,7 +81,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"User Interface","folderPath":"folders/User Interface.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Fonts","folderPath":"folders/User Interface/Fonts.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Templates","folderPath":"folders/User Interface/Templates.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ImGui_GM","folderPath":"folders/_Libraries/ImGui_GM.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"controllerblacklist.csv","CopyToMask":-1,"filePath":"datafiles",},

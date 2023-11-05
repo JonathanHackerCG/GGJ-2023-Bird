@@ -30,6 +30,15 @@ ImGui.__Update();
 			#endregion
 		}
 	}
+	if (CONTROL.in_combat)
+	{
+		#region Esc - Exit Combat
+		if (keyboard_check(vk_escape))
+		{
+			CONTROL.exit_combat();
+		}
+		#endregion
+	}
 #endregion
 
 if (ImGui.BeginMainMenuBar("Debug", true)) {
@@ -83,6 +92,11 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 		#region Collision
 		layer_set_visible("Collision", ImGui.Checkbox("Collision", layer_get_visible("Collision")));
 		#endregion
+	ImGui.EndMenu(); }
+	#endregion
+	#region Combat
+	if (ImGui.BeginMenu("Combat", CONTROL.in_combat)) {
+		MyMenuItem("Skip", "Esc", CONTROL.exit_combat);
 	ImGui.EndMenu(); }
 	#endregion
 	

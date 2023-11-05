@@ -130,13 +130,17 @@ function select_next_enemy()
 #region exit_combat(victory);
 /// @func exit_combat(victory):
 /// @desc Ends the combat encounter.
-function exit_combat(_victory)
+/// @arg	[victory]	Default: true
+function exit_combat(_victory = true)
 {
+	with (par_enemy)
+	{
+		instance_destroy();
+	}
+	
 	queue.clear();
 	phase_queue.clear();
 	AUDIO.music(msc_exploration1);
-	//layer_set_visible("Collision", true);
-	//with (obj_transition) { visible = true; }
 	
 	in_combat = false;
 }

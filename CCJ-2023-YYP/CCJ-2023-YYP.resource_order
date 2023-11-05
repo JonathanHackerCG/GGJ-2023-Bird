@@ -2,6 +2,7 @@
   "FolderOrderSettings": [
     {"name":"_Libraries","order":5,"path":"folders/_Libraries.yy",},
     {"name":"ImGui_GM - Mine","order":5,"path":"folders/_Libraries/ImGui_GM - Mine.yy",},
+    {"name":"ImGui_GM","order":6,"path":"folders/_Libraries/ImGui_GM.yy",},
     {"name":"Input","order":4,"path":"folders/_Libraries/Input.yy",},
     {"name":"(System)","order":1,"path":"folders/_Libraries/Input/(System).yy",},
     {"name":"Classes","order":1,"path":"folders/_Libraries/Input/(System)/Classes.yy",},
@@ -67,7 +68,6 @@
     {"name":"User Interface","order":12,"path":"folders/User Interface.yy",},
     {"name":"Fonts","order":1,"path":"folders/User Interface/Fonts.yy",},
     {"name":"Templates","order":2,"path":"folders/User Interface/Templates.yy",},
-    {"name":"ImGui_GM","order":6,"path":"folders/_Libraries/ImGui_GM.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"__scribble_get_krutidev_matra_lookup_map","order":12,"path":"scripts/__scribble_get_krutidev_matra_lookup_map/__scribble_get_krutidev_matra_lookup_map.yy",},
