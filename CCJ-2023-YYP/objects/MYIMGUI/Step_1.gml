@@ -86,4 +86,4 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 	ImGui.EndMenu(); }
 	#endregion
 	
-ImGui.EndMenu(); }
+ImGui.EndMainMenuBar(); }
