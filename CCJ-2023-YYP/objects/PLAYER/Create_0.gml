@@ -10,8 +10,8 @@ if (instance_number(PLAYER) > 1)
 
 //Player Stats
 move_speed = 4;
-hp = 100;
-hp_max = 100;
+hp = 60;
+hp_max = 60;
 sap = 3;
 sap_max = 9;
 armor = 0;
