@@ -340,15 +340,9 @@ function take_damage(_amount)
 			var myid = id;
 			with (CONTROL)
 			{
-				var _size = array_length(enemies);
-				for (var i = 0; i < _size; i++)
-				{
-					if (enemies[i] == myid)
-					{
-						array_delete(enemies, i, 1);
-						i = _size;
-					}
-				}
+				var _index = array_get_index(enemies, myid);
+				array_delete(enemies, _index, 1);
+				if (selected_index > _index) { selected_index --; } //Fix index to account for killed enemies.
 			}
 			instance_destroy();
 		}
