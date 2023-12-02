@@ -11,7 +11,10 @@
     "name": "Pickups",
     "path": "folders/Pickups.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "par_pickup",
+    "path": "objects/par_pickup/par_pickup.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

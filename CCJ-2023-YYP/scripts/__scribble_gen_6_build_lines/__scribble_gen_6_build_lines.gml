@@ -1,24 +1,21 @@
-//Feather ignore all
-
-#macro __SCRIBBLE_GEN_LINE_START  _line_grid[# _line_count, __SCRIBBLE_GEN_LINE.__WORD_START        ] = _line_word_start;\
+#macro __SCRIBBLE_GEN_LINE_START  _line_grid[# _line_count, __SCRIBBLE_GEN_LINE.__X                 ] = _indent_x;\
+                                  _line_grid[# _line_count, __SCRIBBLE_GEN_LINE.__WORD_START        ] = _line_word_start;\
                                   _line_grid[# _line_count, __SCRIBBLE_GEN_LINE.__HALIGN            ] = _state_halign;\
                                   _line_grid[# _line_count, __SCRIBBLE_GEN_LINE.__STARTS_MANUAL_PAGE] = false;\
-                                  ;\ //Align the left-hand side of the word to the left-hand side of the line. This corrects visually unpleasant gaps and overlaps
+                                  ;\ //Adjust the first word's width to account for visual tweaks
                                   ;\ //TODO - Implement for R2L text
-                                  if (_word_grid[# _line_word_start, __SCRIBBLE_GEN_WORD.__BIDI] < __SCRIBBLE_BIDI.R2L)\
+                                  if ((SCRIBBLE_NEWLINES_PAD_LEFT_SPACE || SCRIBBLE_NEWLINES_TRIM_LEFT_SPACE) && (_word_grid[# _line_word_start, __SCRIBBLE_GEN_WORD.__BIDI] < __SCRIBBLE_BIDI.R2L))\
                                   {\
-                                      _word_glyph_start = _word_grid[# _line_word_start, __SCRIBBLE_GEN_WORD.__GLYPH_START];\
-                                      _word_glyph_end   = _word_grid[# _line_word_start, __SCRIBBLE_GEN_WORD.__GLYPH_END  ];\
-                                      var _left_correction = _glyph_grid[# _word_glyph_start, __SCRIBBLE_GEN_GLYPH.__LEFT_OFFSET];\
+                                      var _word_glyph_start = _word_grid[#  _line_word_start,  __SCRIBBLE_GEN_WORD.__GLYPH_START ];\
+                                      var _word_glyph_end   = _word_grid[#  _line_word_start,  __SCRIBBLE_GEN_WORD.__GLYPH_END   ];\
+                                      var _left_correction  = _glyph_grid[# _word_glyph_start, __SCRIBBLE_GEN_GLYPH.__LEFT_OFFSET];\
                                       ;\
                                       if (((_left_correction > 0) && SCRIBBLE_NEWLINES_PAD_LEFT_SPACE) || ((_left_correction < 0) && SCRIBBLE_NEWLINES_TRIM_LEFT_SPACE))\
                                       {\
-                                          ds_grid_add_region(_glyph_grid, _word_glyph_start, __SCRIBBLE_GEN_GLYPH.__X, _word_glyph_end, __SCRIBBLE_GEN_GLYPH.__X, _left_correction);\
                                           _word_width += _left_correction;\
-                                          _word_grid[# _i, __SCRIBBLE_GEN_WORD.__WIDTH] += _left_correction;\
                                       }\
                                   }\
-                                  _word_x = 0;
+                                  _word_x = _indent_x;
 
 
 #macro __SCRIBBLE_GEN_LINE_END  var _found_line_height = ds_grid_get_max(_word_grid, _line_word_start, __SCRIBBLE_GEN_WORD.__HEIGHT, _line_word_end, __SCRIBBLE_GEN_WORD.__HEIGHT);\
@@ -97,6 +94,7 @@ function __scribble_gen_6_build_lines()
             var _control_index = 0;
             var _word_x        = 0;
             var _line_y        = 0;
+            var _indent_x      = 0;
             
             //Find any horizontal alignment changes
             var _control_delta = _glyph_grid[# 0, __SCRIBBLE_GEN_GLYPH.__CONTROL_COUNT] - _control_index;
@@ -125,9 +123,19 @@ function __scribble_gen_6_build_lines()
                 var _control_delta = _glyph_grid[# _word_start_glyph, __SCRIBBLE_GEN_GLYPH.__CONTROL_COUNT] - _control_index;
                 repeat(_control_delta)
                 {
-                    if (_control_grid[# _control_index, __SCRIBBLE_GEN_CONTROL.__TYPE] == __SCRIBBLE_GEN_CONTROL_TYPE.__HALIGN)
+                    switch(_control_grid[# _control_index, __SCRIBBLE_GEN_CONTROL.__TYPE])
                     {
-                        _state_halign = _control_grid[# _control_index, __SCRIBBLE_GEN_CONTROL.__DATA];
+                        case __SCRIBBLE_GEN_CONTROL_TYPE.__HALIGN:
+                            _state_halign = _control_grid[# _control_index, __SCRIBBLE_GEN_CONTROL.__DATA];
+                        break;
+                        
+                        case __SCRIBBLE_GEN_CONTROL_TYPE.__INDENT_START:
+                            _indent_x = _word_x;
+                        break;
+                        
+                        case __SCRIBBLE_GEN_CONTROL_TYPE.__INDENT_STOP:
+                            _indent_x = 0;
+                        break;
                     }
                     
                     _control_index++;
@@ -334,6 +342,31 @@ function __scribble_gen_6_build_lines()
         else
         {
             __fit_scale = _lower_limit + 0.5*(_upper_limit - _lower_limit);
+        }
+    }
+    
+    //Align the left-hand side of the word to the left-hand side of the line. This corrects visually unpleasant gaps and overlaps
+    //TODO - Implement for R2L text
+    if (SCRIBBLE_NEWLINES_PAD_LEFT_SPACE || SCRIBBLE_NEWLINES_TRIM_LEFT_SPACE)
+    {
+        var _line = 0;
+        repeat(_line_count)
+        {
+            var _line_word_start = _line_grid[# _line, __SCRIBBLE_GEN_LINE.__WORD_START];
+            if (_word_grid[# _line_word_start, __SCRIBBLE_GEN_WORD.__BIDI] < __SCRIBBLE_BIDI.R2L)
+            {
+                var _word_glyph_start = _word_grid[#  _line_word_start,  __SCRIBBLE_GEN_WORD.__GLYPH_START ];
+                var _word_glyph_end   = _word_grid[#  _line_word_start,  __SCRIBBLE_GEN_WORD.__GLYPH_END   ];
+                var _left_correction  = _glyph_grid[# _word_glyph_start, __SCRIBBLE_GEN_GLYPH.__LEFT_OFFSET];
+                
+                if (((_left_correction > 0) && SCRIBBLE_NEWLINES_PAD_LEFT_SPACE) || ((_left_correction < 0) && SCRIBBLE_NEWLINES_TRIM_LEFT_SPACE))
+                {
+                    ds_grid_add_region(_glyph_grid, _word_glyph_start, __SCRIBBLE_GEN_GLYPH.__X, _word_glyph_end, __SCRIBBLE_GEN_GLYPH.__X, _left_correction);
+                    _word_grid[# _i, __SCRIBBLE_GEN_WORD.__WIDTH] += _left_correction;
+                }
+            }
+            
+            ++_line;
         }
     }
     

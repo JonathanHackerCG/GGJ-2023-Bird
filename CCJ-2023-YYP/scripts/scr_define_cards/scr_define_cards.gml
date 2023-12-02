@@ -1,26 +1,26 @@
-enum card
+enum CARD
 {
 	//Remember: Import a new frame for spr_card_front for each of these IDs, in the same order.
-	none, //First Entry
-	cardA,
-	cardB,
-	cardC,
-	cardD,
-	cardE,
-	SapAdder,
-	Heal,
-	Rock,
-	Beetle_Small_1,
-	Beetle_Small_2,
-	Beetle_Small_3,
-	Beetle_Big,
-	Fungi_Small_1,
-	Fungi_Small_2,
-	Fungi_Big_1,
-	Fungi_Big_2,
-	Fungi_Big_3,
+	NONE, //First Entry
+	CARD_A,
+	CARD_B,
+	CARD_C,
+	CARD_D,
+	CARD_E,
+	SAP_ADDER,
+	HEAL,
+	ROCK,
+	BEETLE_SMALL_1,
+	BEETLE_SMALL_2,
+	BEETLE_SMALL_3,
+	BEETLE_BIG,
+	FUNGI_SMALL_1,
+	FUNGI_SMALL_2,
+	FUNGI_BIG_1,
+	FUNGI_BIG_2,
+	FUNGI_BIG_3,
 	//etc
-	_total //Last Entry
+	_TOTAL //Last Entry
 }
 #macro STARTING_DRAW_AMOUNT 5
 #macro MAX_HAND_SIZE 10
@@ -68,11 +68,11 @@ enum card
 
 //Marks Cards
 #region Free Cards
-create_card(card.SapAdder, "", "", 0)
+create_card(CARD.SAP_ADDER, "", "", 0)
 	.add_effect(target_self)
 	.add_effect(effect_sap_range, 1, 2);
 	
-create_card(card.Heal, "", "3-5 Heal\n3-5 Armor", 0)
+create_card(CARD.HEAL, "", "3-5 Heal\n3-5 Armor", 0)
 	.add_effect(target_self)
 	.add_effect(effect_heal_range, 3, 5)
 	.add_effect(effect_armor_range, 3, 5);
@@ -156,11 +156,11 @@ with (create_card(card.Fungi_Big_1, "Shield Charge", "Attack 2 enemies for \n 4 
 	add_effect(effect_armor, 4);
 }
 	
-create_card(card.Fungi_Big_2, "Big Fungi", "3-5 Attack to 2 Random Enemies", 3)
+create_card(CARD.FUNGI_BIG_2, "Big Fungi", "3-5 Attack to 2 Random Enemies", 3)
 	.add_effect(target_enemy_random, 2) 
 	.add_effect(effect_damage_range, 3, 5);
 	
-create_card(card.Fungi_Big_3, "Big Fungi", "4 Attack to 5 Random Enemies", 5)
+create_card(CARD.FUNGI_BIG_3, "Big Fungi", "4 Attack to 5 Random Enemies", 5)
 	.add_effect(target_enemy_random, 5) 
 	.add_effect(effect_damage, 4);
 #endregion

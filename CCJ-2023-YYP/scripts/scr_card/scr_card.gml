@@ -1,4 +1,4 @@
-global.__card_index = array_create(card._total, noone);
+global.__card_index = array_create(CARD._TOTAL, noone);
 #macro card_index global.__card_index
 #region get_card(card_id);
 /// @func get_card(card_id):

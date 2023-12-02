@@ -1,5 +1,3 @@
-//Feather ignore all
-
 /// @param target
 /// @param source
 /// @param overwrite

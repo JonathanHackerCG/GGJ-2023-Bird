@@ -3,4 +3,4 @@
 #macro FONT_DESCRIPTION "fnt_card_description"
 
 #macro HEALTHBAR_Y_OFFSET 8
-#macro INTENT_Y_OFFSET 32
+#macro INTENT_Y_OFFSET 40
