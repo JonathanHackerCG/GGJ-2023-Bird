@@ -124,21 +124,37 @@ create_card(card.Beetle_Big, "Shield Bash", "Attack weakest enemy for 5 damage \
 #endregion
 
 #region Fungi Cards
-create_card(card.Fungi_Small_1, "Fungi", "4 Attack to Random Enemy \n +1 Health", 2)
-	.add_effect(target_enemy_random, 1)
-	.add_effect(effect_damage, 4)
-	.add_effect(target_self) // Change to lowest damage
-	.add_effect(effect_heal, 1);
+with (create_card(card.Fungi_Small_1, "Small Sweep", "Attack 5 enemies for \n 1 damage", 1))
+{
+    add_effect(target_self);
+    repeat(5)
+    {
+        add_effect(target_selection)	
+		add_effect(effect_damage, 1);
+    }
+}
 	
-create_card(card.Fungi_Small_2, "Fungi", "3 Attack to Weakest Enemy \n +1 Sap", 2)
-	.add_effect(select_enemy_weakest) // Change to lowest health
-	.add_effect(effect_damage, 3)
-	.add_effect(target_self) // Change to lowest damage
-	.add_effect(effect_sap, 1);
+with (create_card(card.Fungi_Small_2, "Trifecta", "3 Attack to Weakest Enemy \n +1 Sap", 2))
+{
+    add_effect(target_self);
+    repeat(3)
+    {
+        add_effect(target_selection)	
+		add_effect(effect_damage, 3);
+    }
+}
 	
-create_card(card.Fungi_Big_1, "Big Fungi", "3-7 Attack to 3 Random Enemies", 5)
-	.add_effect(target_enemy_random, 3) 
-	.add_effect(effect_damage_range, 3, 7);
+with (create_card(card.Fungi_Big_1, "Shield Charge", "Attack 2 enemies for \n 4 damage  \n gain 4 armor", 2))
+{
+    add_effect(target_self);
+    repeat(3)
+    {
+        add_effect(target_selection)	
+		add_effect(effect_damage, 3);
+    }
+	add_effect(target_self)
+	add_effect(effect_armor, 4);
+}
 	
 create_card(card.Fungi_Big_2, "Big Fungi", "3-5 Attack to 2 Random Enemies", 3)
 	.add_effect(target_enemy_random, 2) 
