@@ -1,5 +1,3 @@
-//Feather ignore all
-
 /// This function will clear out all memory that Scribble is currently using. You will not normally need
 /// to call this function (Scribble automatically garbage collects resources that haven't been used recently)
 /// but it's occasionally useful when you need memory to be available immediately.

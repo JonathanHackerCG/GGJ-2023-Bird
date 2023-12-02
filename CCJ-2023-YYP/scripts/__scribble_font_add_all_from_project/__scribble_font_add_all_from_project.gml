@@ -1,5 +1,3 @@
-//Feather ignore all
-
 function __scribble_font_add_all_from_project()
 {
     //Try to add all fonts in the project to Scribble

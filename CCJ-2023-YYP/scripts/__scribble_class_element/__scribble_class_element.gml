@@ -1,5 +1,3 @@
-//Feather ignore all
-
 /// @param string
 /// @param uniqueID
 
@@ -77,10 +75,11 @@ function __scribble_class_element(_string, _unique_id) constructor
     __wrap_no_pages   = false;
     __wrap_max_scale  = 1;
     
-    __scale_to_box_dirty      = true;
-    __scale_to_box_max_width  = 0;
-    __scale_to_box_max_height = 0;
-    __scale_to_box_scale      = undefined;
+    __scale_to_box_dirty    = true;
+    __scale_to_box_width    = 0;
+    __scale_to_box_height   = 0;
+    __scale_to_box_maximise = false;
+    __scale_to_box_scale    = undefined;
     
     __line_height_min = -1;
     __line_height_max = -1;
@@ -413,16 +412,18 @@ function __scribble_class_element(_string, _unique_id) constructor
     
     /// @param maxWidth
     /// @param maxHeight
-    static scale_to_box = function(_max_width, _max_height)
+    /// @param [maximise=false]
+    static scale_to_box = function(_max_width, _max_height, _maximise = false)
     {
         _max_width  = ((_max_width  == undefined) || (_max_width  < 0))? 0 : _max_width;
         _max_height = ((_max_height == undefined) || (_max_height < 0))? 0 : _max_height;
         
-        if ((_max_width != __scale_to_box_max_width) || (_max_height != __scale_to_box_max_height))
+        if ((_max_width != __scale_to_box_width) || (_max_height != __scale_to_box_height) || (_maximise != __scale_to_box_maximise))
         {
-            __scale_to_box_max_width  = _max_width;
-            __scale_to_box_max_height = _max_height;
-            __scale_to_box_dirty      = true;
+            __scale_to_box_width    = _max_width;
+            __scale_to_box_height   = _max_height;
+            __scale_to_box_maximise = _maximise;
+            __scale_to_box_dirty    = true;
         }
         
         return self;
@@ -1026,14 +1027,14 @@ function __scribble_class_element(_string, _unique_id) constructor
         return _model.__get_wrapped();
     }
     
-	/// @param [page]
+    /// @param [page]
     static get_text = function()
     {
-		var _page = ((argument_count > 0) && (argument[0] != undefined))? argument[0] : __page;
-		
+        var _page = ((argument_count > 0) && (argument[0] != undefined))? argument[0] : __page;
+        
         var _model = __get_model(true);
         if (!is_struct(_model)) return 0;
-		return _model.__get_text(_page);
+        return _model.__get_text(_page);
     }
     
     /// @param [page]
@@ -1072,6 +1073,22 @@ function __scribble_class_element(_string, _unique_id) constructor
     
     
     #region Typewriter
+    
+    static pre_update_typist = function(_typist)
+    {
+        var _function_scope = other;
+        
+        if (is_struct(_typist))
+        {
+            with(_typist)
+            {
+                //Tick over the typist
+                __tick(other, _function_scope);
+            }
+        }
+        
+        return self;
+    }
     
     static reveal = function(_character)
     {
@@ -1229,7 +1246,11 @@ function __scribble_class_element(_string, _unique_id) constructor
     static refresh = function()
     {
         var _model = __get_model(false);
-        if (_model != undefined) _model.__flush();
+        if (_model != undefined)
+        {
+            _model.__flush();
+            __get_model(true);
+        }
         
         return self;
     }
@@ -1276,18 +1297,18 @@ function __scribble_class_element(_string, _unique_id) constructor
     
     #region Miscellaneous
     
-    static get_events = function()
+    static get_events = function(_position, _page_index = __page, _use_lines = false)
     {
-        var _position = argument[0];
-        var _page     = ((argument_count > 1) && (argument[1] != undefined))? argument[1] : __page;
+        static _empty_array = [];
         
         var _model = __get_model(true);
-        if (!is_struct(_model)) return [];
+        if (!is_struct(_model)) return _empty_array;
         
-        var _page = _model.__pages_array[_page];
+        var _page = _model.__pages_array[_page_index];
+        var _event_struct = _use_lines? _page.__line_events : _page.__char_events;
         
-        var _events = _page.__events[$ _position];
-        if (!is_array(_events)) return [];
+        var _events = _event_struct[$ _position];
+        if (!is_array(_events)) return _empty_array;
         
         return _events;
     }
@@ -1373,7 +1394,7 @@ function __scribble_class_element(_string, _unique_id) constructor
         __text      = _text;
         __unique_id = _unique_id;
         
-        var _new_cache_name = __text + ":" + __unique_id;
+        var _new_cache_name = __text + ((_unique_id == undefined)? SCRIBBLE_DEFAULT_UNIQUE_ID : (":" + string(_unique_id)));
         if (__cache_name != _new_cache_name)
         {
             flush();
@@ -1513,6 +1534,7 @@ function __scribble_class_element(_string, _unique_id) constructor
         static _u_aDataFields   = shader_get_uniform(__shd_scribble, "u_aDataFields"             );
         static _u_aBezier       = shader_get_uniform(__shd_scribble, "u_aBezier"                 );
         
+        static _u_iTypewriterUseLines      = shader_get_uniform(__shd_scribble, "u_iTypewriterUseLines"     );
         static _u_iTypewriterMethod        = shader_get_uniform(__shd_scribble, "u_iTypewriterMethod"       );
         static _u_iTypewriterCharMax       = shader_get_uniform(__shd_scribble, "u_iTypewriterCharMax"      );
         static _u_fTypewriterWindowArray   = shader_get_uniform(__shd_scribble, "u_fTypewriterWindowArray"  );
@@ -1615,6 +1637,7 @@ function __scribble_class_element(_string, _unique_id) constructor
         }
         else if (__tw_reveal != undefined)
         {
+            shader_set_uniform_i(_u_iTypewriterUseLines,          0);
             shader_set_uniform_i(_u_iTypewriterMethod,            SCRIBBLE_EASE.LINEAR);
             shader_set_uniform_i(_u_iTypewriterCharMax,           0);
             shader_set_uniform_f(_u_fTypewriterSmoothness,        0);
@@ -1645,6 +1668,7 @@ function __scribble_class_element(_string, _unique_id) constructor
         static _msdf_u_aDataFields   = shader_get_uniform(__shd_scribble_msdf, "u_aDataFields"  );
         static _msdf_u_aBezier       = shader_get_uniform(__shd_scribble_msdf, "u_aBezier"      );
         
+        static _msdf_u_iTypewriterUseLines      = shader_get_uniform(__shd_scribble_msdf, "u_iTypewriterUseLines"     );
         static _msdf_u_iTypewriterMethod        = shader_get_uniform(__shd_scribble_msdf, "u_iTypewriterMethod"       );
         static _msdf_u_iTypewriterCharMax       = shader_get_uniform(__shd_scribble_msdf, "u_iTypewriterCharMax"      );
         static _msdf_u_fTypewriterWindowArray   = shader_get_uniform(__shd_scribble_msdf, "u_fTypewriterWindowArray"  );
@@ -1751,6 +1775,7 @@ function __scribble_class_element(_string, _unique_id) constructor
         }
         else if (__tw_reveal != undefined)
         {
+            shader_set_uniform_i(_msdf_u_iTypewriterUseLines,          0);
             shader_set_uniform_i(_msdf_u_iTypewriterMethod,            SCRIBBLE_EASE.LINEAR);
             shader_set_uniform_i(_msdf_u_iTypewriterCharMax,           0);
             shader_set_uniform_f(_msdf_u_fTypewriterSmoothness,        0);
@@ -1804,11 +1829,13 @@ function __scribble_class_element(_string, _unique_id) constructor
         
         var _xscale = 1.0;
         var _yscale = 1.0;
-        if (__scale_to_box_max_width  > 0) _xscale = __scale_to_box_max_width  / (_model.__get_width()  + __padding_l + __padding_r);
-        if (__scale_to_box_max_height > 0) _yscale = __scale_to_box_max_height / (_model.__get_height() + __padding_t + __padding_b);
+        if (__scale_to_box_width  > 0) _xscale = __scale_to_box_width  / (_model.__get_width()  + __padding_l + __padding_r);
+        if (__scale_to_box_height > 0) _yscale = __scale_to_box_height / (_model.__get_height() + __padding_t + __padding_b);
         
         var _previous_scale_to_box_scale = __scale_to_box_scale;
-        __scale_to_box_scale = min(1.0, _xscale, _yscale);
+        __scale_to_box_scale = min(_xscale, _yscale);
+        if (!__scale_to_box_maximise) __scale_to_box_scale = min(1, __scale_to_box_scale);
+        
         if (__scale_to_box_scale != _previous_scale_to_box_scale)
         {
             __matrix_dirty = true;
