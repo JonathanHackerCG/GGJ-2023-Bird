@@ -19,4 +19,5 @@ if (CONTROL.in_combat)
 		//Draw selection "arrow" (janky placeholder).
 		draw_text_set(healthbar_x, healthbar_y - INTENT_Y_OFFSET - 20, "\\/", fnt_card_name, fa_center, fa_center, c_yellow);
 	}
+	draw_reset();
 }

@@ -77,7 +77,7 @@ create_card(CARD.HEAL, "", "3-5 Heal\n3-5 Armor", 0)
 	.add_effect(effect_heal_range, 3, 5)
 	.add_effect(effect_armor_range, 3, 5);
 	
-//with (create_card(card.Heal, "", "3-5 Heal\n3-5 Armor", 0))
+//with (create_card(CARD.Heal, "", "3-5 Heal\n3-5 Armor", 0))
 //{
 //    add_effect(target_self);
 //    repeat(5)
@@ -87,7 +87,7 @@ create_card(CARD.HEAL, "", "3-5 Heal\n3-5 Armor", 0)
 //    }
 //}
 	
-create_card(card.Rock, "", "15-30 Attack to Random Enemy \n -10 to 15 Health", 0)
+create_card(CARD.ROCK, "", "15-30 Attack to Random Enemy \n -10 to 15 Health", 0)
 	.add_effect(target_selection)
 	.add_effect(effect_damage_range, 5, 10)
 	.add_effect(target_self)
@@ -97,15 +97,15 @@ create_card(card.Rock, "", "15-30 Attack to Random Enemy \n -10 to 15 Health", 0
 
 
 #region Beetle Cards
-create_card(card.Beetle_Small_1, "Attack", "Attack a Enemy for 4", 1)
+create_card(CARD.BEETLE_SMALL_1, "Attack", "Attack a Enemy for 4", 1)
 	.add_effect(target_selection)	
 	.add_effect(effect_damage, 4);
 	
-create_card(card.Beetle_Small_2, "Defend", "Add 4 armor", 1)
+create_card(CARD.BEETLE_SMALL_2, "Defend", "Add 4 armor", 1)
 	.add_effect(target_self)
 	.add_effect(effect_armor, 4);
 	
-with (create_card(card.Beetle_Small_3, "Multi-Attack", "Attack for 2 on 2 Enemies", 1))
+with (create_card(CARD.BEETLE_SMALL_3, "Multi-Attack", "Attack for 2 on 2 Enemies", 1))
 {
     add_effect(target_self);
     repeat(2)
@@ -115,7 +115,7 @@ with (create_card(card.Beetle_Small_3, "Multi-Attack", "Attack for 2 on 2 Enemie
     }
 }
 	
-create_card(card.Beetle_Big, "Shield Bash", "Attack weakest enemy for 5 damage \n gain 3 armor", 2)
+create_card(CARD.BEETLE_BIG, "Shield Bash", "Attack weakest enemy for 5 damage \n gain 3 armor", 2)
 	.add_effect(select_enemy_weakest)
 	.add_effect(effect_damage, 5)
 	.add_effect(target_self)
@@ -124,7 +124,7 @@ create_card(card.Beetle_Big, "Shield Bash", "Attack weakest enemy for 5 damage \
 #endregion
 
 #region Fungi Cards
-with (create_card(card.Fungi_Small_1, "Small Sweep", "Attack 5 enemies for \n 1 damage", 1))
+with (create_card(CARD.FUNGI_SMALL_1, "Small Sweep", "Attack 5 enemies for \n 1 damage", 1))
 {
     add_effect(target_self);
     repeat(5)
@@ -134,7 +134,7 @@ with (create_card(card.Fungi_Small_1, "Small Sweep", "Attack 5 enemies for \n 1 
     }
 }
 	
-with (create_card(card.Fungi_Small_2, "Trifecta", "3 Attack to Weakest Enemy \n +1 Sap", 2))
+with (create_card(CARD.FUNGI_SMALL_2, "Trifecta", "3 Attack to Weakest Enemy \n +1 Sap", 2))
 {
     add_effect(target_self);
     repeat(3)
@@ -144,7 +144,7 @@ with (create_card(card.Fungi_Small_2, "Trifecta", "3 Attack to Weakest Enemy \n 
     }
 }
 	
-with (create_card(card.Fungi_Big_1, "Shield Charge", "Attack 2 enemies for \n 4 damage  \n gain 4 armor", 2))
+with (create_card(CARD.FUNGI_BIG_1, "Shield Charge", "Attack 2 enemies for \n 4 damage  \n gain 4 armor", 2))
 {
     add_effect(target_self);
     repeat(3)
