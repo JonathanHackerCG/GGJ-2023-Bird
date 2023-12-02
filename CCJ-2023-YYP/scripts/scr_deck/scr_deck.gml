@@ -173,6 +173,7 @@ function Deck() constructor
 	/// @desc Starts the card gameplay.
 	static start = function()
 	{
+		reset();
 		array_copy(_cards_library, 0, _cards, 0, get_size());
 		if (debug)
 		{

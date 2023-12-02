@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_card",
+  "name": "obj_health",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"PLAYER","path":"objects/PLAYER/PLAYER.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
   ],
@@ -29,12 +29,12 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"card_id","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"card.none","varType":0,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"heal_amount","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"25","varType":0,},
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_card_pickup",
-    "path": "sprites/spr_card_pickup/spr_card_pickup.yy",
+    "name": "spr_health_pickup",
+    "path": "sprites/spr_health_pickup/spr_health_pickup.yy",
   },
   "spriteMaskId": null,
   "visible": true,

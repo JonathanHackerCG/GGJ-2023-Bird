@@ -12,6 +12,12 @@
     {"name":"inst_7883C330","path":"rooms/rm_combat_test/rm_combat_test.yy",},
     {"name":"inst_57F223A8","path":"rooms/rm_combat_test/rm_combat_test.yy",},
     {"name":"inst_606D2C68","path":"rooms/rm_combat_test/rm_combat_test.yy",},
+    {"name":"inst_6CE90366","path":"rooms/rm_combat_test/rm_combat_test.yy",},
+    {"name":"inst_278BEDC5","path":"rooms/rm_combat_test/rm_combat_test.yy",},
+    {"name":"inst_3E753FDA","path":"rooms/rm_combat_test/rm_combat_test.yy",},
+    {"name":"inst_30B4A02D","path":"rooms/rm_combat_test/rm_combat_test.yy",},
+    {"name":"inst_20DDEA91","path":"rooms/rm_combat_test/rm_combat_test.yy",},
+    {"name":"inst_A596345","path":"rooms/rm_combat_test/rm_combat_test.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -26,6 +32,18 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7883C330","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_fungi_cerberus","path":"objects/obj_fungi_cerberus/obj_fungi_cerberus.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":720.0,"y":200.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_57F223A8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_fungi_cerberus","path":"objects/obj_fungi_cerberus/obj_fungi_cerberus.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1080.0,"y":320.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_606D2C68","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_fungi_cerberus","path":"objects/obj_fungi_cerberus/obj_fungi_cerberus.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1480.0,"y":240.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6CE90366","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"properties":[
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"propertyId":{"name":"card_id","path":"objects/obj_card/obj_card.yy",},"value":"card.Beetle_Big",},
+          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":760.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_278BEDC5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"properties":[
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"propertyId":{"name":"card_id","path":"objects/obj_card/obj_card.yy",},"value":"card.Beetle_Small_1",},
+          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":400.0,"y":600.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3E753FDA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"properties":[
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"propertyId":{"name":"card_id","path":"objects/obj_card/obj_card.yy",},"value":"card.Fungi_Big_1",},
+          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":880.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_30B4A02D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_health","path":"objects/obj_health/obj_health.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1320.0,"y":720.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_20DDEA91","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_health","path":"objects/obj_health/obj_health.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1520.0,"y":600.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A596345","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_health","path":"objects/obj_health/obj_health.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1480.0,"y":840.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Background_Tiles","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":27,"SerialiseWidth":48,"TileCompressedData":[
 -1296,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tst_tileset_1","path":"tilesets/tst_tileset_1/tst_tileset_1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
