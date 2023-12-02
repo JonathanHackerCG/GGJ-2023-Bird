@@ -11,7 +11,7 @@ function Deck() constructor
 	_cards_exile = [];
 	
 	//Gameplay Commands
-	#region gain_card(_card_id);
+	#region gain_card(card_id);
 	/// @func gain_card
 	/// @desc Adds a card to the deck (use a card ID).
 	/// @arg	card_id
@@ -19,6 +19,43 @@ function Deck() constructor
 	{
 		var _card = get_card(_card_id);
 		array_push(_cards, _card.copy());
+	}
+	#endregion
+	#region remove_card(card_id);
+	/// @func remove_card
+	/// @desc Removes one copy of a card from the deck (use a card ID).
+	/// @arg	card_id
+	static remove_card = function(_card_id)
+	{
+		var _size = get_size();
+		for (var i = 0; i < _size; i++)
+		{
+			var _card = _cards[i];
+			if (_card.get_id() == _card_id)
+			{
+				array_delete(_cards, i, 1);
+				break;
+			}
+		}
+	}
+	#endregion
+	#region get_card_count(card_id);
+	/// @func get_card_count(card_id):
+	/// @desc Returns the number of cards with matching card ID.
+	/// @arg	card_id
+	static get_card_count = function(_card_id)
+	{
+		var _count = 0;
+		var _size = get_size();
+		for (var i = 0; i < _size; i++)
+		{
+			var _card = _cards[i];
+			if (_card.get_id() == _card_id)
+			{
+				_count++;
+			}
+		}
+		return _count;
 	}
 	#endregion
 	#region get_size();
