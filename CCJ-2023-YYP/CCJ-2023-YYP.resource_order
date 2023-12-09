@@ -155,6 +155,7 @@
     {"name":"scribble_anim_jitter","order":2,"path":"scripts/scribble_anim_jitter/scribble_anim_jitter.yy",},
     {"name":"ui_macros","order":10,"path":"scripts/ui_macros/ui_macros.yy",},
     {"name":"input_ignore_key_add","order":7,"path":"scripts/input_ignore_key_add/input_ignore_key_add.yy",},
+    {"name":"SAVE","order":18,"path":"objects/SAVE/SAVE.yy",},
     {"name":"input_gyro_enabled_set","order":1,"path":"scripts/input_gyro_enabled_set/input_gyro_enabled_set.yy",},
     {"name":"spr_tileset_1","order":1,"path":"sprites/spr_tileset_1/spr_tileset_1.yy",},
     {"name":"__scribble_get_anim_properties","order":1,"path":"scripts/__scribble_get_anim_properties/__scribble_get_anim_properties.yy",},

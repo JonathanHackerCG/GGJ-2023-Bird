@@ -197,6 +197,7 @@
     {"id":{"name":"scribble_anim_jitter","path":"scripts/scribble_anim_jitter/scribble_anim_jitter.yy",},},
     {"id":{"name":"ui_macros","path":"scripts/ui_macros/ui_macros.yy",},},
     {"id":{"name":"input_ignore_key_add","path":"scripts/input_ignore_key_add/input_ignore_key_add.yy",},},
+    {"id":{"name":"SAVE","path":"objects/SAVE/SAVE.yy",},},
     {"id":{"name":"input_gyro_enabled_set","path":"scripts/input_gyro_enabled_set/input_gyro_enabled_set.yy",},},
     {"id":{"name":"spr_tileset_1","path":"sprites/spr_tileset_1/spr_tileset_1.yy",},},
     {"id":{"name":"__scribble_get_anim_properties","path":"scripts/__scribble_get_anim_properties/__scribble_get_anim_properties.yy",},},

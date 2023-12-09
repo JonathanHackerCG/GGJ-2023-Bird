@@ -344,7 +344,7 @@ function take_damage(_amount)
 				array_delete(enemies, _index, 1);
 				if (selected_index > _index) { selected_index --; } //Fix index to account for killed enemies.
 			}
-			instance_destroy();
+			instance_destroy(id, true);
 		}
 	}
 }

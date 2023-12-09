@@ -1,4 +1,4 @@
-/// @desc 
+/// @desc Pickup: Draw
 event_inherited();
 
 draw_sprite(spr_pickup_shadow, 0, x, y);
