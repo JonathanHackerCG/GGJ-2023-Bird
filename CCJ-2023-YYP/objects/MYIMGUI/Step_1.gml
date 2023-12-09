@@ -87,6 +87,12 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 		#endregion
 	ImGui.EndMenu(); }
 	#endregion
+	#region Settings
+	if (ImGui.BeginMenu("Settings")) {
+		V_SOUND = ImGui.SliderFloat("Volume (Sounds)", V_SOUND, 0.0, 1.0);
+		V_MUSIC = ImGui.SliderFloat("Volume (Music)",  V_MUSIC, 0.0, 1.0);
+	ImGui.EndMenu(); }
+	#endregion
 	#region View
 	if (ImGui.BeginMenu("View")) {
 		#region Collision
@@ -107,7 +113,7 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 	#endregion
 	#region Deck
 	if (ImGui.BeginMenu("Deck", !CONTROL.in_combat)) {
-		for (var i = 0; i < card._total; i++)
+		for (var i = 0; i < CARD._TOTAL; i++)
 		{
 			var _card = get_card(i);
 			if (_card != noone)
@@ -118,13 +124,6 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 				if (_new_count < _card_count && _new_count >= 0) { CONTROL.player_deck.remove_card(i); }
 				else if (_new_count > _card_count) { CONTROL.player_deck.gain_card(i); }
 			}
-			
-				//var B	= real(ImGui.InputInt("Blue Mana",	team_get_value(_team, teamval.mana_B), 50, 500));
-				//var G = real(ImGui.InputInt("Green Mana", team_get_value(_team, teamval.mana_G), 50, 500));
-				//var F	= real(ImGui.InputInt("Food Cap",		team_get_value(_team, teamval.food_max), 10, 50));
-				//team_set_value(_team, teamval.mana_B, B);
-				//team_set_value(_team, teamval.mana_G, G);
-				//team_set_value(_team, teamval.food_max, F);
 		}
 	ImGui.EndMenu(); }
 	#endregion

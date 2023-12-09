@@ -1,6 +1,13 @@
 /// @desc Enemy: Create
 event_inherited();
 
+savekey = SAVE.make_key(id);
+if (SAVE.check(savekey))
+{
+	instance_destroy();
+	exit;
+}
+
 hp = 1;
 hp_max = hp;
 armor = 0;
