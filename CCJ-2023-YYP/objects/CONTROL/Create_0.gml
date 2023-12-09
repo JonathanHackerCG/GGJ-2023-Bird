@@ -14,6 +14,7 @@ enemies = [];
 selected_index = -1;
 selected_enemy = noone;
 in_combat = false;
+in_player_phase = false;
 
 alarm[0] = 1; //Start Room
 
@@ -41,6 +42,7 @@ function start_combat()
 	
 	player_deck.start();
 	in_combat = true;
+	in_player_phase = false;
 	phase_restart();
 }
 #endregion
@@ -60,13 +62,23 @@ function player_phase_start()
 /// @func player_phase_input();
 function player_phase_input()
 {
+	in_player_phase = true;
 	if (!instance_exists(par_enemy))
 	{
 		exit_combat();
 	}
 	
 	var _check = input_check_pressed("end_turn");
-	if (_check) { input_consume("end_turn"); }
+	if (input_check_pressed("confirm") && point_distance(mouse_x, mouse_y, UI.end_turn_x, UI.end_turn_y) <= 80)
+	{
+		_check = true;
+	}
+	if (_check)
+	{
+		input_consume("end_turn");
+		input_consume("confirm");
+		in_player_phase = false;
+	}
 	return _check;
 }
 #endregion

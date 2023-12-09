@@ -572,6 +572,7 @@
     {"id":{"name":"input_verb_get_group","path":"scripts/input_verb_get_group/input_verb_get_group.yy",},},
     {"id":{"name":"input_source_mode_set","path":"scripts/input_source_mode_set/input_source_mode_set.yy",},},
     {"id":{"name":"input_cursor_elastic_remove","path":"scripts/input_cursor_elastic_remove/input_cursor_elastic_remove.yy",},},
+    {"id":{"name":"obj_ui_end_turn","path":"objects/obj_ui_end_turn/obj_ui_end_turn.yy",},},
     {"id":{"name":"snd_card_place1","path":"sounds/snd_card_place1/snd_card_place1.yy",},},
     {"id":{"name":"input_check_released","path":"scripts/input_check_released/input_check_released.yy",},},
     {"id":{"name":"AUDIO","path":"objects/AUDIO/AUDIO.yy",},},

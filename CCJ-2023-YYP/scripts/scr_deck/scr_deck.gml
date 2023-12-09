@@ -284,6 +284,13 @@ function Deck() constructor
 			_cards_hand[_selection]._draw_input(UI.draw_x + _selection_offset, UI.draw_y, true);
 		}
 		#endregion
+		#region End turn button.
+		if (CONTROL.in_player_phase)
+		{
+			draw_sprite(spr_ui_end_turn, 0, UI.end_turn_x, UI.end_turn_y);
+			draw_text_scribble(UI.end_turn_x, UI.end_turn_y, "[fnt_card_number_outline][fa_center][fa_middle]End\nTurn");
+		}
+		#endregion
 	}
 	#endregion
 	

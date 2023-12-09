@@ -491,6 +491,7 @@
     {"name":"input_verb_get_group","order":1,"path":"scripts/input_verb_get_group/input_verb_get_group.yy",},
     {"name":"input_source_mode_set","order":7,"path":"scripts/input_source_mode_set/input_source_mode_set.yy",},
     {"name":"input_cursor_elastic_remove","order":3,"path":"scripts/input_cursor_elastic_remove/input_cursor_elastic_remove.yy",},
+    {"name":"obj_ui_end_turn","order":6,"path":"objects/obj_ui_end_turn/obj_ui_end_turn.yy",},
     {"name":"snd_card_place1","order":4,"path":"sounds/snd_card_place1/snd_card_place1.yy",},
     {"name":"input_check_released","order":13,"path":"scripts/input_check_released/input_check_released.yy",},
     {"name":"AUDIO","order":1,"path":"objects/AUDIO/AUDIO.yy",},
