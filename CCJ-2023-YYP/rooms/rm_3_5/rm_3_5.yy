@@ -11,6 +11,8 @@
     {"name":"inst_5EDA670A_11","path":"rooms/rm_3_5/rm_3_5.yy",},
     {"name":"inst_249A02C_11","path":"rooms/rm_3_5/rm_3_5.yy",},
     {"name":"inst_6A5B33C6_11","path":"rooms/rm_3_5/rm_3_5.yy",},
+    {"name":"inst_124E6FFF","path":"rooms/rm_3_5/rm_3_5.yy",},
+    {"name":"inst_49C950C","path":"rooms/rm_3_5/rm_3_5.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -34,6 +36,10 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"target_room","path":"objects/obj_transition/obj_transition.yy",},"value":"noone",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"propertyId":{"name":"location","path":"objects/obj_transition/obj_transition.yy",},"value":"\"bottom\"",},
           ],"rotation":0.0,"scaleX":44.0,"scaleY":2.0,"x":80.0,"y":1000.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_124E6FFF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_health","path":"objects/obj_health/obj_health.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":840.0,"y":200.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_49C950C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"properties":[
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"propertyId":{"name":"card_id","path":"objects/obj_card/obj_card.yy",},"value":"CARD.FUNGI_SMALL_1",},
+          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":920.0,"y":480.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":27,"SerialiseWidth":48,"TileCompressedData":[
 -4,814,5,559,560,561,562,563,-24,-2147483648,12,1879048237,1879048301,1879048365,1879048429,1879048493,1879048557,805308287,805308286,805308285,805308284,805308283,805308282,-3,750,-4,814,5,623,624,625,626,627,-24,-2147483648,12,1879048236,1879048300,1879048364,1879048428,1879048492,1879048556,805308223,805308222,805308221,805308220,805308219,805308218,
