@@ -87,6 +87,12 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 		#endregion
 	ImGui.EndMenu(); }
 	#endregion
+	#region Settings
+	if (ImGui.BeginMenu("Settings")) {
+		V_SOUND = ImGui.SliderFloat("Volume (Sounds)", V_SOUND, 0.0, 1.0);
+		V_MUSIC = ImGui.SliderFloat("Volume (Music)",  V_MUSIC, 0.0, 1.0);
+	ImGui.EndMenu(); }
+	#endregion
 	#region View
 	if (ImGui.BeginMenu("View")) {
 		#region Collision
