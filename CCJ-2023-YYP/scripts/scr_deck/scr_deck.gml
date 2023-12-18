@@ -262,12 +262,8 @@ function Deck() constructor
 		}
 		#endregion
 		#region Drawing player's hand.
-		if (DEBUG && keyboard_check_pressed(ord("D")))
-		{
-			draw_cards(1);
-		}
-		
-		for (var i = 0; i < _hand_size; i++)
+		//for (var i = 0; i < _hand_size; i++)
+		for (var i = _hand_size - 1; i >= 0; i--)
 		{
 			var _offset = i * min(DRAW_MAX_SPACING, DRAW_MAX_WIDTH / _hand_size);
 			if (i != _selection)
