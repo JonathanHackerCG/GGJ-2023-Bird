@@ -331,8 +331,12 @@ function take_damage(_amount)
 	{
 		if (object_index == PLAYER)
 		{
-			//PLAYER DEATH
-			hp = hp_max;
+			//PLAYER DEATH (GAME OVER)
+			CONTROL.exit_combat(false);
+			hp = 0;
+			audio_stop_all();
+			instance_create_depth(0, 0, -room_height * 2, obj_game_over);
+			instance_destroy();
 		}
 		else
 		{
@@ -375,6 +379,7 @@ function gain_sap(_amount)
 function gain_armor(_amount)
 {
 	armor += _amount;
+	if (object_index == PLAYER) { AUDIO.play("snd_player_heal"); }
 }
 #endregion
 

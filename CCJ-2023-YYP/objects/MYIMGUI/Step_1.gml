@@ -98,6 +98,9 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 		#region Collision
 		layer_set_visible("Collision", ImGui.Checkbox("Collision", layer_get_visible("Collision")));
 		#endregion
+		#region UI
+		CONTROL.show_ui = ImGui.Checkbox("UI", CONTROL.show_ui);
+		#endregion
 	ImGui.EndMenu(); }
 	#endregion
 	#region Combat
@@ -108,6 +111,13 @@ if (ImGui.BeginMainMenuBar("Debug", true)) {
 		{
 			CONTROL.player_deck.discard_hand();
 			CONTROL.player_deck.draw_cards(STARTING_DRAW_AMOUNT);
+		});
+		MyMenuItem("Kill Rocco", "", function()
+		{
+			with (PLAYER)
+			{
+				take_damage(1000);
+			}
 		});
 	ImGui.EndMenu(); }
 	#endregion
