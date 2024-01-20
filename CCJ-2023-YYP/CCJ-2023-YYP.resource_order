@@ -379,6 +379,7 @@
     {"name":"scribble_glyph_get","order":16,"path":"scripts/scribble_glyph_get/scribble_glyph_get.yy",},
     {"name":"input_mouse_dy","order":8,"path":"scripts/input_mouse_dy/input_mouse_dy.yy",},
     {"name":"input_cursor_translate","order":14,"path":"scripts/input_cursor_translate/input_cursor_translate.yy",},
+    {"name":"obj_card_preview","order":6,"path":"objects/obj_card_preview/obj_card_preview.yy",},
     {"name":"input_cursor_elastic_get","order":2,"path":"scripts/input_cursor_elastic_get/input_cursor_elastic_get.yy",},
     {"name":"scribble_anim_pulse","order":3,"path":"scripts/scribble_anim_pulse/scribble_anim_pulse.yy",},
     {"name":"__input_system","order":37,"path":"scripts/__input_system/__input_system.yy",},

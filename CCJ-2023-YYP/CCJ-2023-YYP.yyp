@@ -443,6 +443,7 @@
     {"id":{"name":"scribble_glyph_get","path":"scripts/scribble_glyph_get/scribble_glyph_get.yy",},},
     {"id":{"name":"input_mouse_dy","path":"scripts/input_mouse_dy/input_mouse_dy.yy",},},
     {"id":{"name":"input_cursor_translate","path":"scripts/input_cursor_translate/input_cursor_translate.yy",},},
+    {"id":{"name":"obj_card_preview","path":"objects/obj_card_preview/obj_card_preview.yy",},},
     {"id":{"name":"input_cursor_elastic_get","path":"scripts/input_cursor_elastic_get/input_cursor_elastic_get.yy",},},
     {"id":{"name":"scribble_anim_pulse","path":"scripts/scribble_anim_pulse/scribble_anim_pulse.yy",},},
     {"id":{"name":"__input_system","path":"scripts/__input_system/__input_system.yy",},},
