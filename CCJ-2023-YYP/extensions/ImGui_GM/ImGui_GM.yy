@@ -18,7 +18,7 @@
   "exportToGame": true,
   "extensionVersion": "1.0.13",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"imgui_gm.dll","constants":[
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"IMGUI_GM_VERSION","hidden":false,"value":"\"1.0.13\"",},
       ],"copyToTargets":-1,"filename":"imgui_gm.dll","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"__imgui_initialize","argCount":0,"args":[],"documentation":"/// @function __imgui_initialize(info)\r\n/// @argument {ds_map} info - Operating system info","externalName":"__imgui_initialize","help":"","hidden":false,"kind":1,"returnType":1,},

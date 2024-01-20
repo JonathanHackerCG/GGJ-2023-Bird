@@ -2,6 +2,7 @@
 event_inherited();
 
 if (CONTROL.in_combat) { exit; }
+if (instance_exists(obj_card_preview)) { exit; }
 
 //Movement/Pathfinding
 if (input_check_pressed("move") && !DEBUG_USING_MOUSE)

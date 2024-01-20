@@ -215,13 +215,7 @@ function Deck() constructor
 		
 		#region Health and sap.
 		draw_reset();
-		var xx = UI.health_x;
-		var yy = UI.health_y;
-		var hp_scale = PLAYER.hp / PLAYER.hp_max;
-		draw_sprite(spr_ui_health, 1, xx, yy);
-		draw_sprite_ext(spr_ui_health, 2, xx, yy, 1, hp_scale, 0, c_white, 1.0);
-		draw_sprite(spr_ui_health, 3, xx, yy);
-		draw_text_scribble(xx - 4, yy - 36, $"[fnt_card_description_outline][fa_center][fa_top]{string(PLAYER.hp)}");
+		draw_player_healthbar();
 		
 		var xx = UI.sap_x;
 		var yy = UI.sap_y;
@@ -262,12 +256,8 @@ function Deck() constructor
 		}
 		#endregion
 		#region Drawing player's hand.
-		if (DEBUG && keyboard_check_pressed(ord("D")))
-		{
-			draw_cards(1);
-		}
-		
-		for (var i = 0; i < _hand_size; i++)
+		//for (var i = 0; i < _hand_size; i++)
+		for (var i = _hand_size - 1; i >= 0; i--)
 		{
 			var _offset = i * min(DRAW_MAX_SPACING, DRAW_MAX_WIDTH / _hand_size);
 			if (i != _selection)

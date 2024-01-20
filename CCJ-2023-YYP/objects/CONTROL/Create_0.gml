@@ -1,6 +1,8 @@
 /// @desc CONTROL: Create
 event_inherited();
 
+show_ui = true;
+
 #macro CELLSIZE 40
 #macro SCREEN_W 1920
 #macro SCREEN_H 1080
