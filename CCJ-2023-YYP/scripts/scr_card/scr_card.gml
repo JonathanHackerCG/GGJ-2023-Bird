@@ -171,8 +171,8 @@ function Card(_card_id, _name, _description, _cost) constructor
 		static CARD_YOFFSET = sprite_get_yoffset(spr_card_front);
 		static NAME_X = 64;
 		static NAME_Y = 96;
-		static COST_X = 256;
-		static COST_Y = 72;
+		static COST_X = 296;
+		static COST_Y = 76;
 		static DESC_X = 68;
 		static DESC_Y = 384;
 		
