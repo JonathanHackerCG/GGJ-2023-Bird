@@ -1,6 +1,8 @@
 /// @desc Player: Step
 event_inherited();
 
+if (keyboard_check_pressed(vk_escape)) { game_end(); }
+
 if (CONTROL.in_combat) { exit; }
 if (instance_exists(obj_card_preview)) { exit; }
 
