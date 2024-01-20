@@ -1,4 +1,6 @@
 /// @desc MYIMGUI: Create
+if (!DEBUG) { instance_destroy(); exit; }
+
 ImGui.__Initialize();
 
 #region toggle_menu();

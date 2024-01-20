@@ -87,7 +87,7 @@ create_card(CARD.HEAL, "", "3-5 Heal\n3-5 Armor", 0)
 //    }
 //}
 	
-create_card(CARD.ROCK, "", "15-30 Attack to Random Enemy \n -10 to 15 Health", 0)
+create_card(CARD.ROCK, "Rocc", "15-30 Attack to Random Enemy \n -10 to 15 Health\n[c_gray]It's not just a boulder.[/c]", 0)
 	.add_effect(target_selection)
 	.add_effect(effect_damage_range, 5, 10)
 	.add_effect(target_self)
@@ -117,6 +117,7 @@ with (create_card(CARD.BEETLE_SMALL_3, "Multi-Attack", "Attack for 2 on 2 Enemie
 	
 create_card(CARD.BEETLE_BIG, "Shield Bash", "Attack weakest enemy for 5 damage \n gain 3 armor", 2)
 	.add_effect(select_enemy_weakest)
+	.add_effect(target_selection)
 	.add_effect(effect_damage, 5)
 	.add_effect(target_self)
 	.add_effect(effect_armor, 4);
